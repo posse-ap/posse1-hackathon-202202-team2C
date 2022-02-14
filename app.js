@@ -166,7 +166,8 @@ function fetchIssues() {
 
         // console.log(issues);
 
-        issuesList.innerHTML += '<div class="well">' +
+        issuesList.innerHTML += '<div class="ranking-container">' + 
+            '<div class="well">' +
             // '<h6>Issue ID: ' + id + '</h6>'+
             // '<p><span class="label label-info">' + status + '</span></p>'+
             '<p> ' + [i + 1] + '</p>' +
@@ -176,7 +177,45 @@ function fetchIssues() {
             // '<link><span class="glyphicon glyphicon-user"></span> ' + assignedTo1 + '</link>'+
             '<a href="#" onclick="setStatusClosed(\'' + id + '\')" class="btn btn-warning">Close</a> ' +
             '<a href="#" onclick="deleteIssue(\'' + id + '\')" class="btn btn-danger">Delete</a>' +
+            '</div>' +
+            '<div class="preview-img">' +
+            '<input type="file" id="example '+[i]+'" multiple>' +
+            '<div id="preview '+[i]+'"></div>' +
+            '</div>' + 
             '</div>';
+
+            function previewFile(file) {
+                // プレビュー画像を追加する要素
+                const preview = document.getElementById('preview '+[i]+'');
+            
+                // FileReaderオブジェクトを作成
+                const reader = new FileReader();
+            
+                // ファイルが読み込まれたときに実行する
+                reader.onload = function (e) {
+                  const imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
+                  const img = document.createElement("img"); // img要素を作成
+                  img.src = imageUrl; // 画像のURLをimg要素にセット
+                  preview.appendChild(img); // #previewの中に追加
+                }
+            
+                // いざファイルを読み込む
+                reader.readAsDataURL(file);
+            }
+            
+            
+              // <input>でファイルが選択されたときの処理
+            const fileInput = document.getElementById('example '+[i]+'');
+            const handleFileSelect = () => {
+                const files = fileInput.files;
+                // for (let i = 0; i < files.length; i++) {
+                // previewFile(files[i]);
+                // }
+                files.forEach(file => {
+                    previewFile(file);
+                });
+            }
+            fileInput.addEventListener('change', handleFileSelect);
     }
 }
 
@@ -219,3 +258,33 @@ function changeDisplay(element){
       break;
   }
 }
+// ここから画像のアップロード
+// function previewFile(file) {
+//     // プレビュー画像を追加する要素
+//     const preview = document.getElementById('preview');
+
+//     // FileReaderオブジェクトを作成
+//     const reader = new FileReader();
+
+//     // ファイルが読み込まれたときに実行する
+//     reader.onload = function (e) {
+//       const imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
+//       const img = document.createElement("img"); // img要素を作成
+//       img.src = imageUrl; // 画像のURLをimg要素にセット
+//       preview.appendChild(img); // #previewの中に追加
+//     }
+
+//     // いざファイルを読み込む
+//     reader.readAsDataURL(file);
+// }
+
+
+//   // <input>でファイルが選択されたときの処理
+// const fileInput = document.getElementById('example');
+// const handleFileSelect = () => {
+//     const files = fileInput.files;
+//     for (let i = 0; i < files.length; i++) {
+//     previewFile(files[i]);
+//     }
+// }
+// fileInput.addEventListener('change', handleFileSelect);
