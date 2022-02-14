@@ -36,17 +36,58 @@ li {
 /*
 セクションタイトル用の共通クラス
 */
+
+/* header{
+    margin: 0 auto;
+} */
+
+.all-header{
+    display: flex;
+    position: fixed;
+    z-index: 100;
+    width:100%;
+    /* position: relative; */
+    /* padding-left: 40%; */
+    justify-content: space-between;
+    background-color: rgba(135, 207, 235, 0.459);
+}
+
+/* .header-titile{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+} */
+
 .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 100px;
-    text-align: center;
+    font-size: 4rem;
+    /* margin-bottom: 100px; */
+    /* text-align: center; */
     position: relative;
+    padding-top: 2%;
+}
+
+.tweet-it-button{
+    height: 50%;
+    /* width: 200px; */
+}
+
+.twitter-share-button{
+    width: 100px;
+}
+
+.line-it-button{
+    width: 100px;
+}
+
+.share-button{
+    
 }
 
 /* 疑似要素でタイトル下に下線を引く */
 .section-title::after {
     content: "";
-    width: 100px;
+    width: 200px;
     height: 3px;
     background-color: #333;
     display: block;
@@ -60,7 +101,7 @@ li {
 /*-------------------------------------------
 ヘッダー
 -------------------------------------------*/
-#header {
+/* #header {
     height: 100px;
     padding: 40px 0 0 50px;
 }
@@ -72,7 +113,7 @@ li {
 
 #header .site-title a {
     display: block;
-}
+} */
 
 /*
 ハンバーガ―メニュー
@@ -218,6 +259,10 @@ li {
 /*-------------------------------------------
 Mainvisual
 -------------------------------------------*/
+main{
+    padding-top: 140px;
+}
+
 #mainvisual {
     height: 720px;
     position: relative;
@@ -780,9 +825,9 @@ SP
     /*-------------------------------------------
   ヘッダー
   -------------------------------------------*/
-    #header {
+    /* #header {
         padding: 25px 0 0 25px;
-    }
+    } */
 
     /* ハンバーガ―メニュー */
     .hamburger {
