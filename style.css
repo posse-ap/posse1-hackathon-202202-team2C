@@ -60,6 +60,42 @@ li {
     margin: 2% auto;
 } */
 
+.service__tab {
+    display: flex;
+    gap: 24px;
+}
+.service__tab__button {
+  background: #9dd3a8;
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+  width: 33.3333%;
+  text-align: center;
+  padding: 20px 8px;
+  cursor: pointer;
+}
+.service__tab__button[aria-selected=true] {
+  background: #3aa7a0;
+  font-weight: bold;
+}
+.service__panel {
+  background: #f4f0e6;
+  border: solid 1px #333;
+  padding: 32px 32px 40px;
+}
+.service__panel__item[aria-hidden=true] {
+  display: none;
+}
+.service__panel__item[aria-hidden=false] {
+  background: #9fd9d0;
+}
+.service__panel__item__title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.container {
+  margin-top: 24px;
+}
+
 .header-titile{
     width: 80%;
 }
