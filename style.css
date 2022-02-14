@@ -45,10 +45,9 @@ li {
 }
 
 .all-header{
-    /* display: flex; */
     background-color: rgba(135, 207, 235, 0.459);
     position: fixed;
-    width:90%;
+    width: 100%;
     height: 96px;
     z-index: 100;
     box-shadow: 3px 3px 3px rgb(204 204 204);
@@ -62,8 +61,7 @@ li {
     /* font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体"; */
     height: 96px;
     /* justify-content: space-between; */
-  }
-
+}
 
 .posse-logo img {
     max-width: 130px;
@@ -72,49 +70,10 @@ li {
     /* width: 70%;
     height: auto;
     margin: 2% auto; */
-
-.service__tab {
-    display: flex;
-    gap: 24px;
-}
-.service__tab__button {
-  background: #9dd3a8;
-  color: #fff;
-  border-radius: 10px 10px 0 0;
-  width: 33.3333%;
-  text-align: center;
-  padding: 20px 8px;
-  cursor: pointer;
-}
-.service__tab__button[aria-selected=true] {
-  background: #3aa7a0;
-  font-weight: bold;
-}
-.service__panel {
-  background: #f4f0e6;
-  border: solid 1px #333;
-  padding: 32px 32px 40px;
-}
-.service__panel__item[aria-hidden=true] {
-  display: none;
-}
-.service__panel__item[aria-hidden=false] {
-  background: #9fd9d0;
-}
-.service__panel__item__title {
-  font-size: 18px;
-  font-weight: bold;
-}
-.container {
-  margin-top: 24px;
 }
 
-.header-titile{
-    width: 80%;
-}
-
-.header-title {
-    /* margin-right: 10px; */
+.header-title{
+    margin-right: 10px;
     width: 73%;
 }
 
@@ -297,6 +256,43 @@ li {
 #navi .btn:hover {
     background-color: #fff;
     color: #ff2a2a;
+}
+
+/* タブ切替 */
+.service__tab {
+    display: flex;
+    gap: 24px;
+}
+.service__tab__button {
+  background: #9dd3a8;
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+  width: 33.3333%;
+  text-align: center;
+  padding: 20px 8px;
+  cursor: pointer;
+}
+.service__tab__button[aria-selected=true] {
+  background: #3aa7a0;
+  font-weight: bold;
+}
+.service__panel {
+  background: #f4f0e6;
+  border: solid 1px #333;
+  padding: 32px 32px 40px;
+}
+.service__panel__item[aria-hidden=true] {
+  display: none;
+}
+.service__panel__item[aria-hidden=false] {
+  background: #9fd9d0;
+}
+.service__panel__item__title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.container {
+  margin-top: 24px;
 }
 
 /*-------------------------------------------
