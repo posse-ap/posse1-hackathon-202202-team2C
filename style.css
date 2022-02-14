@@ -398,6 +398,25 @@ Reason
     padding: 80px 0;
 }
 
+#reason .ranking-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#reason .row{
+    display: flex;
+    gap: 60px;
+}
+
+/* #reason .row-right {
+    display: flex;
+    gap: 60px;
+} */
+
+/* #reason .reverse {
+    flex-direction: row-reverse;
+} */
+
 /*
 スライド左右共通
 最初は「opacity: 0;」で非表示にしておく
@@ -436,6 +455,12 @@ Reason
     margin-bottom: 40px;
 }
 
+#reason .inview-photo-slide-right {
+    margin-bottom: 40px;
+    border-radius: 20px;
+    /* padding-left: 20px; */
+}
+
 /*
 アニメーション（スライド左）を実行
 
@@ -450,6 +475,14 @@ forwards：アニメーション終了時の状態をそのまま維持
     animation: slide-left 0.5s ease-out 0s 1 forwards;
 }
 
+#reason .photo-slide-right {
+    animation: photo-slide-right 0.5s ease-out 0s 1 forwards;
+}
+
+#reason .photo-slide-left {
+    animation: photo-slide-left 0.5s ease-out 0s 1 forwards;
+}
+
 /*
 アニメーション処理
 
@@ -457,6 +490,28 @@ forwards：アニメーション終了時の状態をそのまま維持
 100%（0.5秒）かけて要素を表示させながら元の位置へ移動させる
 */
 @keyframes slide-left {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes photo-slide-right {
+    0% {
+        transform: translateX(50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes photo-slide-left {
     0% {
         transform: translateX(-50%);
     }
