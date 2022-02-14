@@ -43,38 +43,58 @@
 
     <header>
         <div class="all-header">
-            <div class="all-header-logo">
-                <img src="./img/posseLogo.jpg" alt="posse-logo" class="posse-logo">
-            </div>
-
-            <div class="header-title">
-                <h1 class="section-title">My Collection</h1>
-            </div>
-
-            <div class="share-button">
-                <div class="tweet-button">
+            <div class="site-header">
+                <h1 class="posse-logo">
+                    <img src="./img/posseLogo.jpg" alt="POSSEロゴ">
+                </h1>
+                <div class="header-title">
+                    <h2 class="section-title">My Collection<span class="bottom"></span></h2>
+                </div>
+                <div>
                     <div class="tweet-it-button">
                         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
                             data-size="large" data-lang="en" data-show-count="false">Tweet</a>
                     </div>
-                </div>
-
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-                <div class="line-button">
-                    <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL"
-                        data-url="https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/"
-                        data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;">
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <div class="line-it-button">
+                        <a class="line-share-button" data-lang="ja" data-type="share-a" data-env="REAL"
+                            data-url="https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/"
+                            data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;">Line</a>
                     </div>
+                    <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
                 </div>
-
-                <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async"
-                    defer="defer">
-                    </script>
-
             </div>
         </div>
     </header>
+    <!-- <header id="posselogoLink wrapper">
+        横幅ずれないよう固定
+        <div class="all-header">
+            <div class="site-header">
+                <h1 class="posselogo">
+                    <a href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">
+                        <img src="./img/posselogo.jpg" alt="POSSEロゴ">
+                    </a>
+                </h1>
+                <div class="menu-content">
+                    <ul class="topmenu">
+                        <li class="header-list"><a href="#aboutLink">POSSEとは</a></li>
+                        <li class="header-list"><a href="#programmingLink">プログラミング</a></li>
+                        <li class="header-list"><a href="#personalLink">生涯の仲間</a></li>
+                        <li class="header-list"><a href="#personalInterview">POSSE生からの声</a></li>
+                        <li class="header-list"><a href="activity.html">活動記録</a></li>
+                        <li class="header-list"><a href="overview.html">日常の記録</a></li>
+                    </ul>
+                </div>
+                <a class="linelogo" href="https://lin.ee/sQdqKjf">
+                    <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加">
+                </a>
+                ハンバーガーアイコン
+                <div type="button" class="menu-btn">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </header> -->
 
     <main>
         <!-- メインビジュアル -->
