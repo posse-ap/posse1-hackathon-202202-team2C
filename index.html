@@ -43,35 +43,26 @@
 
     <header>
         <div class="all-header">
-            <div class="all-header-logo">
-                <img src="./img/posseLogo.jpg" alt="posse-logo" class="posse-logo">
-            </div>
-
-            <div class="header-title">
-                <h1 class="section-title">My Collection</h1>
-            </div>
-
-            <div class="share-button">
-                <div class="tweet-button">
+            <div class="site-header">
+                <h1 class="posse-logo">
+                    <img src="./img/posseLogo.jpg" alt="POSSEロゴ">
+                </h1>
+                <div class="header-title">
+                    <h2 class="section-title">My Collection<span class="bottom"></span></h2>
+                </div>
+                <div>
                     <div class="tweet-it-button">
                         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
                             data-size="large" data-lang="en" data-show-count="false">Tweet</a>
                     </div>
-                </div>
-
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-                <div class="line-button">
-                    <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL"
-                        data-url="https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/"
-                        data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;">
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <div class="line-it-button">
+                        <a class="line-share-button" data-lang="ja" data-type="share-a" data-env="REAL"
+                            data-url="https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/"
+                            data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;">Line</a>
                     </div>
+                    <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
                 </div>
-
-                <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async"
-                    defer="defer">
-                    </script>
-
             </div>
         </div>
     </header>
@@ -229,12 +220,41 @@
                     </div>
                 </div>
             </div>
+ <!-- 追加 -->
+        <div class="container">
+            <h1>新たなコンテンツを追加 <small>by posse my　collection</small></h1>
+            <div class="jumbotron">
+                <h3>コンテンツ追加</h3>
+                <form id="issueInputForm">
+
+                    <div class="form-group">
+                        <label for="issueDescInput">タイトル</label>
+                        <input type="text" class="form-control" id="issueDescInput" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="issueSeverityInput">評価</label>
+                        <select id="issueSeverityInput" class="form-control">
+                            <option value="0"></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+
             <div id="panel4" role="tabpanel" class="service__panel__item" hidden>
                 <!-- ランキング -->
                 <section id="ranking" class="service__panel__item__title">
                     <div class="col-lg-12">
                         <div id="issuesList">
                         </div>
+
                     </div>
                 </section>
                 <!-- 追加 -->
