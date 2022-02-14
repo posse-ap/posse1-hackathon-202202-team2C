@@ -166,13 +166,13 @@ function fetchIssues() {
 
         // console.log(issues);
 
-        issuesList.innerHTML += '<div class="well">' +
+        issuesList.innerHTML += '<div class="rank-box">' +
             // '<h6>Issue ID: ' + id + '</h6>'+
             // '<p><span class="label label-info">' + status + '</span></p>'+
-            '<p> ' + [i + 1] + '</p>' +
-            '<h3>' + desc + '</h3>' +
-            '<p><span class="glyphicon glyphicon-star"></span> ' + severity + '</p>' +
-            '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo + '</p>' +
+            '<p class="rank-number"> ' + [i + 1] +'　'+ desc+'</p>' +
+            // '<h3>' + desc + '</h3>' +
+            '<p　class="rank-text"><span class="glyphicon glyphicon-star"></span> ' + severity + '</p>' +
+            '<p　class="rank-text"><span class="glyphicon glyphicon-user"></span> ' + assignedTo + '</p>' +
             // '<link><span class="glyphicon glyphicon-user"></span> ' + assignedTo1 + '</link>'+
             '<a href="#" onclick="setStatusClosed(\'' + id + '\')" class="btn btn-warning">Close</a> ' +
             '<a href="#" onclick="deleteIssue(\'' + id + '\')" class="btn btn-danger">Delete</a>' +
