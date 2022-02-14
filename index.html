@@ -10,12 +10,15 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="jquery.js"></script>
-    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    
 </head>
 
-<body>
+<body　onload="fetchIssues()">
     <!-- <header id="header">
         <h1 class="site-title">
             <a href="#"><img src="img/logo-r.svg" alt="BBB英会話スクール"></a>
@@ -51,18 +54,23 @@
             <div class="share-button">
                 <div class="tweet-button">
                     <div class="tweet-it-button">
-                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-lang="en" data-show-count="false">Tweet</a>
+                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+                            data-size="large" data-lang="en" data-show-count="false">Tweet</a>
                     </div>
                 </div>
 
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
                 <div class="line-button">
-                    <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/" data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;"></div>
+                    <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL"
+                        data-url="https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/"
+                        data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;">
+                    </div>
                 </div>
 
-                <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer">
-                </script>
+                <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async"
+                    defer="defer">
+                    </script>
 
             </div>
         </div>
@@ -86,14 +94,15 @@
         <section id="reason">
             <!-- <h2 class="section-title">My Collection</h2> -->
 
-            <div class="bg">
-                <div>
+            <div class="">
+                <!-- <div>
                     <p class="ranking-title">1.雪ウサギ</p>
                     <div class="row">
                         <div class="slide inview-slide-left">
                             <p>
                                 <span class="title">レスポンシブ対応</span>
                                 <span class="text">ハッカソン</span>
+                                </div>
                             </p>
                         </div>
                         <div class="photo-slide-right">
@@ -108,104 +117,163 @@
                             <p>
                                 <span class="title">ハッカソン</span>
                                 <span class="text">ハッカソン</span>
+                                </div>
                             </p>
                         </div>
                         <div class="photo-slide-left">
                             <img class="inview-photo-slide-right" src="img/🍓.jpg" alt="ランキング2位">
                         </div>
                     </div>
-                </div>
+                </div> -->
+                <div class="col-lg-12">
+                    <div id="issuesList">
+                    </div>
+                  </div>
             </div>
         </section>
 
-        <!-- 受講生の声 -->
-        <section id="voice" class="wrapper">
-            <h2 class="section-title">posseの声</h2>
 
-            <div class="item-left inview-balloon">
-                <div class="student">
-                    <img src="img/icon-student1.png" alt="">
-                    <p class="name">○○○さん<br>大学生</p>
-                </div>
-                <div class="balloon-text">
-                    <p>
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                    </p>
-                </div>
+
+        <!-- 追加 -->
+        <div　 class="container">
+            <!-- <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong><a href="http://codingthesmartway.com/courses/complete-javascript/" target="_blank">[ONLINE COURSE] - The Complete JavaScript Course: Build a Real-World Project</a></strong> +++ Master JavaScript with the most complete JavaScript course on the market! Includes projects, challenges, final exam, ES6 +++ You will gain a deep and true understanding of how JavaScript works behind the scenes. +++
+              </div> -->
+            <h1>新たなコンテンツを追加 <small>by posse my　collection</small></h1>
+            <div class="jumbotron">
+                <h3>コンテンツ追加</h3>
+                <form id="issueInputForm">
+
+                    <div class="form-group">
+                        <label for="issueDescInput">タイトル</label>
+                        <input type="text" class="form-control" id="issueDescInput" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="issueSeverityInput">評価</label>
+                        <select id="issueSeverityInput" class="form-control">
+                            <option value="0"></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="issueAssignedToInput">コメント</label>
+                        <input type="text" class="form-control" id="issueAssignedToInput" placeholder="">
+                    </div>
+                    <!-- 
+                  <div class="form-group">
+                    <label for="issueAssignedToInput">リンク等</label>
+                    <input type="text" class="form-control" id="issueAssignedToInput1" placeholder="">
+                  </div> -->
+
+                    <button type="submit" class="btn btn-primary">Add</button>
+
+                </form>
+            </div>
+            <div class="col-lg-12">
+                
             </div>
 
-            <div class="item-right inview-balloon">
-                <div class="balloon-text">
-                    <p>
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                    </p>
+
+            <!-- 受講生の声 -->
+            <section id="voice" class="wrapper">
+                <h2 class="section-title">posseの声</h2>
+
+                <div class="item-left inview-balloon">
+                    <div class="student">
+                        <img src="img/icon-student1.png" alt="">
+                        <p class="name">○○○さん<br>大学生</p>
+                    </div>
+                    <div class="balloon-text">
+                        <p>
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        </p>
+                    </div>
                 </div>
-                <div class="student">
-                    <img src="img/icon-student2.png" alt="">
-                    <p class="name">○○○さん<br>大学生</p>
+
+                <div class="item-right inview-balloon">
+                    <div class="balloon-text">
+                        <p>
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        </p>
+                    </div>
+                    <div class="student">
+                        <img src="img/icon-student2.png" alt="">
+                        <p class="name">○○○さん<br>大学生</p>
+                    </div>
                 </div>
+
+                <div class="item-left inview-balloon">
+                    <div class="student">
+                        <img src="img/icon-student3.png" alt="">
+                        <p class="name">○○○さん<br>大学生</p>
+                    </div>
+                    <div class="balloon-text">
+                        <p>
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- スクールの概要 -->
+            <section id="summary">
+                <div class="wrapper">
+                    <h2 class="section-title">スクールの概要</h2>
+
+                    <ul class="menu">
+                        <li>
+                            <h3 class="menu-title">
+                                <span class="ja">レッスン内容</span>
+                                <span class="en">LESSON</span>
+                            </h3>
+                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </li>
+                        <li>
+                            <h3 class="menu-title">
+                                <span class="ja">料金プラン</span>
+                                <span class="en">PRICE</span>
+                            </h3>
+                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </li>
+                        <li>
+                            <h3 class="menu-title">
+                                <span class="ja">講師のご紹介</span>
+                                <span class="en">TEACHER</span>
+                            </h3>
+                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </li>
+                        <li>
+                            <h3 class="menu-title">
+                                <span class="ja">ハッカソン</span>
+                                <span class="en">Q&A</span>
+                            </h3>
+                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 無料体験申し込み -->
+            <div id="entry" class="wrapper">
+                <p class="title">ハッカソン</p>
+                <p class="catchphrase">今なら初月のレッスンを特別価格で受講できる割引クーポンをプレゼント！</p>
+                <a class="btn" href="#">無料体験に申し込む</a>
             </div>
-
-            <div class="item-left inview-balloon">
-                <div class="student">
-                    <img src="img/icon-student3.png" alt="">
-                    <p class="name">○○○さん<br>大学生</p>
-                </div>
-                <div class="balloon-text">
-                    <p>
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- スクールの概要 -->
-        <section id="summary">
-            <div class="wrapper">
-                <h2 class="section-title">スクールの概要</h2>
-
-                <ul class="menu">
-                    <li>
-                        <h3 class="menu-title">
-                            <span class="ja">レッスン内容</span>
-                            <span class="en">LESSON</span>
-                        </h3>
-                        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                    </li>
-                    <li>
-                        <h3 class="menu-title">
-                            <span class="ja">料金プラン</span>
-                            <span class="en">PRICE</span>
-                        </h3>
-                        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                    </li>
-                    <li>
-                        <h3 class="menu-title">
-                            <span class="ja">講師のご紹介</span>
-                            <span class="en">TEACHER</span>
-                        </h3>
-                        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                    </li>
-                    <li>
-                        <h3 class="menu-title">
-                            <span class="ja">ハッカソン</span>
-                            <span class="en">Q&A</span>
-                        </h3>
-                        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- 無料体験申し込み -->
-        <div id="entry" class="wrapper">
-            <p class="title">ハッカソン</p>
-            <p class="catchphrase">今なら初月のレッスンを特別価格で受講できる割引クーポンをプレゼント！</p>
-            <a class="btn" href="#">無料体験に申し込む</a>
-        </div>
     </main>
 
     <footer id="footer">
@@ -247,6 +315,11 @@
         </ul>
         <p class="copyright">&copy; BBB English School</p>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.js"></script>
+    <script src="chance.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
