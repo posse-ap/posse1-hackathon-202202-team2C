@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-    
+
 </head>
 
 <body　onload="fetchIssues()">
@@ -27,7 +27,7 @@
         <nav id="navi">
             <img class="logo" src="img/logo-w.svg" alt="BBB英会話スクール">
             <ul class="menu">
-                <li><a href="#reason">テキスト</a></li>
+                <li><a href="#ranking">テキスト</a></li>
                 <li><a href="#voice">テキスト</a></li>
                 <li><a href="#summary">テキスト</a></li>
             </ul>
@@ -43,8 +43,8 @@
 
     <header>
         <div class="all-header">
-            <div>
-                <img src="./img/posseLogo.jpg" alt="posse-logo" width="200px" height="100px">
+            <div class="all-header-logo">
+                <img src="./img/posseLogo.jpg" alt="posse-logo" class="posse-logo">
             </div>
 
             <div class="header-title">
@@ -90,45 +90,43 @@
             </ul>
         </div> -->
 
-        <!-- BBBが選ばれる理由 -->
-        <section id="reason">
-            <!-- <h2 class="section-title">My Collection</h2> -->
-
-            <div class="">
-                <!-- <div>
+        <!-- ランキング -->
+        <section id="ranking">
+            <div class="bg">
+                <div>
                     <p class="ranking-title">1.雪ウサギ</p>
                     <div class="row">
                         <div class="slide inview-slide-left">
                             <p>
                                 <span class="title">レスポンシブ対応</span>
                                 <span class="text">ハッカソン</span>
-                                </div>
-                            </p>
                         </div>
-                        <div class="photo-slide-right">
-                            <img class="inview-photo-slide-right" src="img/雪ウサギ.png" alt="ランキング1位">
-                        </div>
+                        </p>
+                    </div>
+                    <div class="photo-slide-right">
+                        <img class="inview-photo-slide-right" src="img/雪ウサギ.png" alt="ランキング1位">
                     </div>
                 </div>
-                <div>
-                    <p class="ranking-title">2.いちご</p>
-                    <div class="row">
-                        <div class="slide inview-slide-right">
-                            <p>
-                                <span class="title">ハッカソン</span>
-                                <span class="text">ハッカソン</span>
-                                </div>
-                            </p>
-                        </div>
-                        <div class="photo-slide-left">
-                            <img class="inview-photo-slide-right" src="img/🍓.jpg" alt="ランキング2位">
-                        </div>
+            </div>
+            <div>
+                <p class="ranking-title">2.いちご</p>
+                <div class="row">
+                    <div class="slide inview-slide-right">
+                        <p>
+                            <span class="title">ハッカソン</span>
+                            <span class="text">ハッカソン</span>
                     </div>
-                </div> -->
-                <div class="col-lg-12">
-                    <div id="issuesList">
-                    </div>
-                  </div>
+                    </p>
+                </div>
+                <div class="photo-slide-left">
+                    <img class="inview-photo-slide-right" src="img/🍓.jpg" alt="ランキング2位">
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-12">
+                <div id="issuesList">
+                </div>
+            </div>
             </div>
         </section>
 
@@ -136,10 +134,6 @@
 
         <!-- 追加 -->
         <div　 class="container">
-            <!-- <div class="alert alert-warning alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <strong><a href="http://codingthesmartway.com/courses/complete-javascript/" target="_blank">[ONLINE COURSE] - The Complete JavaScript Course: Build a Real-World Project</a></strong> +++ Master JavaScript with the most complete JavaScript course on the market! Includes projects, challenges, final exam, ES6 +++ You will gain a deep and true understanding of how JavaScript works behind the scenes. +++
-              </div> -->
             <h1>新たなコンテンツを追加 <small>by posse my　collection</small></h1>
             <div class="jumbotron">
                 <h3>コンテンツ追加</h3>
@@ -171,18 +165,13 @@
                         <label for="issueAssignedToInput">コメント</label>
                         <input type="text" class="form-control" id="issueAssignedToInput" placeholder="">
                     </div>
-                    <!-- 
-                  <div class="form-group">
-                    <label for="issueAssignedToInput">リンク等</label>
-                    <input type="text" class="form-control" id="issueAssignedToInput1" placeholder="">
-                  </div> -->
 
                     <button type="submit" class="btn btn-primary">Add</button>
 
                 </form>
             </div>
             <div class="col-lg-12">
-                
+
             </div>
 
 

@@ -45,19 +45,30 @@ li {
     display: flex;
     position: fixed;
     z-index: 100;
+    height: 100px;
     width:100%;
     /* position: relative; */
     /* padding-left: 40%; */
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 170px;
     background-color: rgba(135, 207, 235, 0.459);
 }
 
-/* .header-titile{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+/* .all-header-logo{
+    width:70%;
+    height: auto;
+    margin: 2% auto;
 } */
+
+.header-titile{
+    width: 80%;
+}
+
+.posse-logo{
+    width: 70%;
+    height: auto;
+    margin: 2% auto;
+}
 
 .section-title {
     font-size: 4rem;
@@ -432,33 +443,33 @@ infinite：アニメーションの処理を無限に繰り返す
 }
 
 /*-------------------------------------------
-Reason
+ranking
 -------------------------------------------*/
-#reason {
+#ranking {
     margin-bottom: 120px;
 }
 
-#reason .bg {
+#ranking .bg {
     background-color: #ff2a2a;
     padding: 80px 0;
 }
 
-#reason .ranking-title {
+#ranking .ranking-title {
     font-size: 30px;
     font-weight: bold;
 }
 
-#reason .row{
+#ranking .row{
     display: flex;
-    gap: 60px;
+    gap: 80px;
 }
 
-/* #reason .row-right {
+/* #ranking .row-right {
     display: flex;
     gap: 60px;
 } */
 
-/* #reason .reverse {
+/* #ranking .reverse {
     flex-direction: row-reverse;
 } */
 
@@ -466,7 +477,7 @@ Reason
 スライド左右共通
 最初は「opacity: 0;」で非表示にしておく
 */
-#reason .slide {
+#ranking .slide {
     width: 50%;
     display: flex;
     align-items: center;
@@ -476,34 +487,33 @@ Reason
     opacity: 0;
 }
 
-#reason .slide img {
+#ranking .slide img {
     width: auto;
     height: 60px;
     margin-right: 30px;
 }
 
-#reason .slide .title {
+#ranking .slide .title {
     color: #ff2a2a;
     display: block;
     font-size: 1.75rem;
     font-weight: bold;
 }
 
-#reason .slide .text {
+#ranking .slide .text {
     display: block;
     font-size: 1.125rem;
 }
 
-#reason .inview-slide-left {
+#ranking .inview-slide-left {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     margin-bottom: 40px;
 }
 
-#reason .inview-photo-slide-right {
+#ranking .inview-photo-slide-right {
     margin-bottom: 40px;
     border-radius: 20px;
-    /* padding-left: 20px; */
 }
 
 /*
@@ -516,15 +526,15 @@ ease-out：アニメーションの変化（開始時は早く、終了時は緩
 1：アニメーションの繰り返し回数（1回）
 forwards：アニメーション終了時の状態をそのまま維持
 */
-#reason .slide-left {
+#ranking .slide-left {
     animation: slide-left 0.5s ease-out 0s 1 forwards;
 }
 
-#reason .photo-slide-right {
+#ranking .photo-slide-right {
     animation: photo-slide-right 0.5s ease-out 0s 1 forwards;
 }
 
-#reason .photo-slide-left {
+#ranking .photo-slide-left {
     animation: photo-slide-left 0.5s ease-out 0s 1 forwards;
 }
 
@@ -567,7 +577,7 @@ forwards：アニメーション終了時の状態をそのまま維持
     }
 }
 
-#reason .inview-slide-right {
+#ranking .inview-slide-right {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
@@ -577,7 +587,7 @@ forwards：アニメーション終了時の状態をそのまま維持
 
 ※左の処理と同様
 */
-#reason .slide-right {
+#ranking .slide-right {
     animation: slide-right 0.5s ease-out 0s 1 forwards;
 }
 
@@ -959,21 +969,29 @@ SP
     }
 
     /*-------------------------------------------
-  Reason
+  ranking
   -------------------------------------------*/
-    #reason {
+
+    /* #ranking {
+        background: url("../img/background.gif") repeat;
+        animation: fall 10s infinite linear;
+        padding: 60px 0;
+        margin-bottom: 120px;
+    } */
+
+    #ranking {
         margin-bottom: 80px;
     }
 
-    #reason .bg {
+    #ranking .bg {
         padding: 40px 0;
     }
 
-    #reason .slide {
+    #ranking .slide {
         width: calc(100% - 16px);
     }
 
-    #reason .slide .title {
+    #ranking .slide .title {
         font-size: 1.5rem;
     }
 
