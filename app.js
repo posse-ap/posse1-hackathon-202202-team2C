@@ -152,7 +152,7 @@ function fetchIssues() {
     })
     issues.reverse();
     console.log(issues);
-    // var issuesListe = document.getElementById('issuesList');
+    var issuesList = document.getElementById('issuesList');
     //イシューのリストを一旦空にする（最新のものだけを表示させるため）
     issuesList.innerHTML = '';
     //イシューの数分だけ作成
@@ -178,6 +178,7 @@ function fetchIssues() {
             '<a href="#" onclick="setStatusClosed(\'' + id + '\')" class="btn btn-warning">Close</a> ' +
             '<a href="#" onclick="deleteIssue(\'' + id + '\')" class="btn btn-danger">Delete</a>' +
             '</div>' +
+            // 画像ファイルの追加とプレビュー
             '<div class="preview-img">' +
             '<input type="file" id="example '+[i]+'" multiple>' +
             '<div id="preview '+[i]+'"></div>' +
