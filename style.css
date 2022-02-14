@@ -1170,3 +1170,31 @@ SP
         margin-bottom: 30px;
     }
 }
+
+/* 画像のプレビュー */
+#preview img {
+    width: 400px;
+    margin: 10px;
+    border: solid 1px silver;
+}
+
+.ranking-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.well{
+    width: 60%;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 768px) {
+    .ranking-container{
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .well{
+        width: 100%;
+    }
+}
