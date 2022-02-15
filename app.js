@@ -1,149 +1,3 @@
-$(function () {
-    /*=================================================
-    ハンバーガ―メニュー
-    ===================================================*/
-    // ハンバーガーメニューをクリックした時
-    $('.hamburger').on('click', function () {
-        // ハンバーガーメニューの共通処理を呼び出す
-        hamburger();
-    });
-    // メニューのリンクをクリックした時
-    $('#navi a').on('click', function () {
-        // ハンバーガーメニューの共通処理を呼び出す
-        hamburger();
-    });
-
-    /*=================================================
-    Inview（画面に表示されたタイミングで処理を実行）
-    ===================================================*/
-    // BBBが選ばれる理由（スライド左）
-    $('.inview-slide-left').on('inview', function (event, isInView, visiblePartX, visiblePartY) {
-        if (isInView) {
-            // 要素が表示されたらslide-leftクラスを追加
-            $(this).stop().addClass('slide-left');
-        }
-    });
-    // BBBが選ばれる理由（スライド右）
-    $('.inview-slide-right').on('inview', function (event, isInView, visiblePartX, visiblePartY) {
-        if (isInView) {
-            // 要素が表示されたらslide-rightクラスを追加
-            $(this).stop().addClass('slide-right');
-        }
-    });
-    // 受講生の声（ふきだし）
-    $('.inview-balloon').on('inview', function (event, isInView, visiblePartX, visiblePartY) {
-        if (isInView) {
-            // 要素が表示されたらballoonクラスを追加
-            $(this).stop().addClass('balloon');
-        }
-    });
-});
-
-/*=================================================
-ハンバーガ―メニュー共通処理
-===================================================*/
-// ハンバーガーメニューをクリックした時とメニュー内のリンクをクリックした時の
-// 処理が同じなので処理を共通化する
-function hamburger() {
-    // toggleClassを使用することで、hamburgerクラスにactiveクラスが存在する場合は削除、
-    // 存在しない場合を追加する処理を自動で行ってくれる
-    $('.hamburger').toggleClass('active');
-
-    if ($('.hamburger').hasClass('active')) {
-        // hamburgerクラスにactiveクラスが存在する場合は、naviにもactiveクラスを追加する
-        $('#navi').addClass('active');
-    } else {
-        // hamburgerクラスにactiveクラスが存在しない場合は、naviからactiveクラスを削除する
-        $('#navi').removeClass('active');
-    }
-}
-
-
-
-window.addEventListener('DOMContentLoaded', () => { document.getElementById('issueInputForm').addEventListener('submit', saveIssue); });
-
-
-
-//イシュー登録機能
-function saveIssue(e) {
-    var issueDesc = document.getElementById('issueDescInput').value;//イシュー内容
-    var issueSeverity = document.getElementById('issueSeverityInput').value;//イシューの緊急度
-    var issueSeverity1 = document.getElementById('issueSeverityInput1').value;//イシューの緊急度
-    var issueAssignedTo = document.getElementById('issueAssignedToInput').value;//イシューの担当者
-    // var issueAssignedTo1 = document.getElementById('issueAssignedToInput1').value;//イシューの担当者
-    var issueId = chance.guid();//イシューid
-    var issueStatus = 'Open';//イシューの初期状態
-
-    console.log(issueSeverity1);
-
-    var issue = {
-        id: issueId,
-        description: issueDesc,
-        severity: issueSeverity,
-        severity1: issueSeverity1,
-        assignedTo: issueAssignedTo,
-        // assignedTo1: issueAssignedTo1,
-        status: issueStatus
-    }
-    //localStorageとは、Webブラウザにデータを保存する領域のことです。ブラウザを閉じても保存されたままであることが特徴になります。このlocalStorageを使って、データを保存したり取得したりすることができます。
-    if (localStorage.getItem('issues') == null) {
-        //ローカルストレージに何もデータがない時、issuesを配列化してそこへフォームのイシュー内容を追加する
-        var issues = [];
-        issues.push(issue);
-        localStorage.setItem('issues', JSON.stringify(issues));//サーバー通信する際に送信するデータは、JSON構造のデータに「シリアライズ化」という処理を施す
-    } else {
-        var issues = JSON.parse(localStorage.getItem('issues'));
-        issues.push(issue);
-        localStorage.setItem('issues', JSON.stringify(issues));
-    }
-    //フォームの内容をリセットする
-    document.getElementById('issueInputForm').reset();
-
-    //イシューの内容をサイト下部に表示させるための処理
-    fetchIssues();
-
-    //submitイベントの発生元であるフォームが持つデフォルトの動作をキャンセルするメソッドです。
-    e.preventDefault();
-
-    console.log(issues);
-}
-
-
-//クローズボタンを押した時の処理
-function setStatusClosed(id) {
-    var issues = JSON.parse(localStorage.getItem('issues'));
-
-    for (var i = 0; i < issues.length; i++) {
-        if (issues[i].id == id) {
-            issues[i].status = 'Closed';//状態をcloseに変更
-        }
-    }
-
-    localStorage.setItem('issues', JSON.stringify(issues));
-
-    fetchIssues();
-}
-
-
-//デリートボタンを押したときの処理
-function deleteIssue(id) {
-    var issues = JSON.parse(localStorage.getItem('issues'));
-
-    for (var i = 0; i < issues.length; i++) {
-        if (issues[i].id == id) {
-            issues.splice(i, 1);//イシューを配列から削除させる
-        }
-    }
-
-    localStorage.setItem('issues', JSON.stringify(issues));
-
-    fetchIssues();
-
-}
-
-
-
-
 //イシューをページ下部に表示
 function fetchIssues() {
     var issues = JSON.parse(localStorage.getItem('issues'));
@@ -153,15 +7,11 @@ function fetchIssues() {
     issues.reverse();
     // console.log(issues);
 
-
-
     var movie = issues.filter(function (object) {
         if (object.severity1 == 1) {
             return true;
         }
     });
-
-
 
     var movies = [];
     movies.push(movie);
@@ -206,27 +56,20 @@ function fetchIssues() {
     // console.log(musics[0][1].description)
     // console.log(games[0][1].description)
 
-    
-    
-    
-    
-    
-    
-    
-    
     var issuesList0 = document.getElementById('issuesList0');
     var issuesList1 = document.getElementById('issuesList1');
     var issuesList2 = document.getElementById('issuesList2');
     var issuesList3 = document.getElementById('issuesList3');
+
     //イシューのリストを一旦空にする（最新のものだけを表示させるため）
     issuesList0.innerHTML = '';
     issuesList1.innerHTML = '';
     issuesList2.innerHTML = '';
     issuesList3.innerHTML = '';
-    
+
     // 映画
     for (var i = 0; i < 3; i++) {
-        
+
         var id0 = movies[0][i].id;
         var desc0 = movies[0][i].description;
         var severity0 = movies[0][i].severity;
@@ -234,85 +77,74 @@ function fetchIssues() {
         var assignedTo0 = movies[0][i].assignedTo;
         // var assignedTo1 = issues[i].assignedTo1;
         var status0 = movies[0][i].status;
-        
-        
+
+
         console.log(desc0);
-        
+
         issuesList0.innerHTML += '<div class="ranking-container">' +
         '<div class="well">' +
         '<p class="rank-number"> ' + [i + 1] + '　　' + desc0 + '</p>' +
         '<p><span class="glyphicon glyphicon-star"></span> ' + severity0 + '</p>' +
         '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo0 + '</p>';
-        
     };
-    
-    
+
     // 本
     for (var i = 0; i < 3; i++) {
-        
+
         var id1 = books[0][i].id;
         var desc1 = books[0][i].description;
         var severity1 = books[0][i].severity;
         var assignedTo1 = books[0][i].assignedTo;
         var status1 = books[0][i].status;
-        
-        
+
         console.log(desc1);
-        
+
         issuesList1.innerHTML += '<div class="ranking-container">' +
         '<div class="well">' +
         '<p class="rank-number"> ' + [i + 1] + '　　' + desc1 + '</p>' +
         '<p><span class="glyphicon glyphicon-star"></span> ' + severity1 + '</p>' +
         '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo1 + '</p>';
-        
     };
-    
-    
+
+    //音楽
     for (var i = 0; i < 3; i++) {
-        
+
         var id2 = musics[0][i].id;
         var desc2 = musics[0][i].description;
         var severity2 = musics[0][i].severity;
         var assignedTo2 = musics[0][i].assignedTo;
         var status2 = musics[0][i].status;
-        
-        
+
         console.log(desc2);
-        
+
         issuesList2.innerHTML += '<div class="ranking-container">' +
         '<div class="well">' +
-        '<p class="rank-number"> ' + [i + 1] + '　　' + desc2 + '</p>' +
+        '<p class="rank-number"> ' + [i + 1] + '' + desc2 + '</p>' +
         '<p><span class="glyphicon glyphicon-star"></span> ' + severity2 + '</p>' +
         '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo2 + '</p>';
-        
-        
     };
-    
-    
+
+    //ゲーム
     for (var i = 0; i < 3; i++) {
-        
+
         var id3 = games[0][i].id;
         var desc3 = games[0][i].description;
         var severity3 = games[0][i].severity;
-        
         var assignedTo3 = games[0][i].assignedTo;
-        
         var status3 = games[0][i].status;
-        
-        
-        
+
         issuesList3.innerHTML += '<div class="ranking-container">' +
         '<div class="well">' +
         '<p class="rank-number"> ' + [i + 1] + '' + desc3 + '</p>' +
         '<p><span class="glyphicon glyphicon-star"></span> ' + severity3 + '</p>' +
         '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo3 + '</p>'+
-        
+
         // 画像ファイルの追加とプレビュー
         '<div class="preview-img">' +
         `<input type="file" id="example${i}" multiple>` +
         `<div id="preview${i}"></div>` +
         '</div>' + '</div>' + '</div>';
-        
+
         function previewFile(file) {
             // プレビュー画像を追加する要素
             const preview = document.getElementById(`preview${i}`);
@@ -325,11 +157,11 @@ function fetchIssues() {
                 img.src = imageUrl; // 画像のURLをimg要素にセット
                 preview.appendChild(img); // #previewの中に追加
             };
-            
+
             // いざファイルを読み込む
             reader.readAsDataURL(file);
         };
-        
+
         // <input>でファイルが選択されたときの処理
         const fileInput = document.getElementById(`example${i}`);
         const handleFileSelect = () => {
@@ -339,7 +171,7 @@ function fetchIssues() {
             }
         }
             fileInput.addEventListener('change', handleFileSelect);
-            
+
     // for (var i = 0; i < 3; i++) {
 
         //     var id4 = animes[0][i].id;
@@ -347,10 +179,9 @@ function fetchIssues() {
         //     var severity4 = animes[0][i].severity;
     //     var assignedTo4 = animes[0][i].assignedTo;
     //     var status4 = animes[0][i].status;
-    
-    
+
     //     console.log(desc4);
-    
+
     //     issuesList4.innerHTML += '<div class="ranking-container">' +
     //         '<div class="well">' +
     //         '<p class="rank-number"> ' + [i + 1] + '</p>' +
@@ -364,16 +195,8 @@ function fetchIssues() {
     // '</div>' +
     // '</div>';
     // };
+    };
 };
-
-
-};
-
-
-
-
-
-
 
 
 //タブ切り替え機能
@@ -412,6 +235,7 @@ function changeDisplay(element) {
             break;
     }
 }
+
 // ここから画像のアップロード
 // function previewFile(file) {
 //     // プレビュー画像を追加する要素
