@@ -135,7 +135,6 @@ li {
     padding: 20px 8px;
     cursor: pointer;
     font-weight: bold;
-    opacity: 0.8;
     font-family: 'Permanent Marker', cursive;
     font-size: 20px;
     box-shadow: 3px 3px 5px white;
@@ -386,13 +385,14 @@ main {
     color: rgb(var(--text-color));
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    background-image: linear-gradient(-20deg, rgb(10, 10, 10) 0%, rgb(3, 24, 9) 100%);
+    background-image: linear-gradient(-20deg, rgb(131, 131, 131) 0%, #2eb1e6 100%);
     border-width: 6px;
     border-style: double;
     border-color: transparent;
     border-image: initial;
     padding: 2rem;
     border-radius: 25px;
+    box-shadow: 3px 3px 5px white;
 
 }
 
@@ -412,6 +412,10 @@ main {
     letter-spacing: 0.1em;
     color: rgb(255, 255, 255);
     text-shadow: rgb(0, 0, 0) -3px 2px 0px;
+}
+
+.service__tab__mobile{
+    display: none;
 }
 
 /* レスポンシブ */
@@ -477,6 +481,14 @@ main {
         width: 40px;
         height: auto;
     }
+
+    .service__tab__mobile{
+        display: block;
+    }
+
+    .service__tab__contaner{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 415px){
@@ -535,6 +547,32 @@ main {
     color: #fff;
     border: 1px solid #fff;
     background-color: #333;
-    padding: 2rem;
-    margin-bottom: 8rem;
+    padding: 3rem;
+    margin-bottom: 11rem;
+}
+
+/* .modalContaner{
+    margin: 0 auto;
+    width: 35%;
+} */
+
+/* プロフィール画像 */
+.profile__contaner{
+    padding: 5rem;
+}
+
+.profile__contaner img{
+    width: 100%;
+}
+
+footer{
+    background-color: rgba(15, 15, 15, 0.89);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer__posseslogo{
+    width: 8%;
+    margin: 0 auto;
 }
