@@ -206,7 +206,7 @@ function fetchIssues() {
     console.log(musics[0][1].description)
     console.log(games[0][1].description)
 
-
+};
 
 
 
@@ -301,51 +301,42 @@ function fetchIssues() {
 
         issuesList3.innerHTML += '<div class="ranking-container">' +
             '<div class="well">' +
-            '<p class="rank-number"> ' + [i + 1] + '　　' + desc3 + '</p>' +
+            '<p class="rank-number"> ' + [i + 1] + '' + desc3 + '</p>' +
             '<p><span class="glyphicon glyphicon-star"></span> ' + severity3 + '</p>' +
             '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo3 + '</p>'+
-            // 画像ファイルの追加とプレビュー
-            // '<div class="preview-img">' +
-            // '<input type="file" id="example'+ [i] +'" multiple>' +
-            // '<div id="preview'+ [i] + '"></div>' +
-            // '</div>' +
-            '</div>';
 
-            // プレビュー画像を追加する要素
-        //     function previewFile(file) {
-        //     const preview = document.getElementById(`preview${i}`);
-        
-        //     // FileReaderオブジェクトを作成
-        //     const reader = new FileReader();
-        
-        //     // ファイルが読み込まれたときに実行する
-        //     reader.onload = function (e) {
-        //         const imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
-        //         const img = document.createElement("img"); // img要素を作成
-        //         img.src = imageUrl; // 画像のURLをimg要素にセット
-        //         preview.appendChild(img); // #previewの中に追加
-        //     }
-        
-        //     // いざファイルを読み込む
-        //     reader.readAsDataURL(file);
-        // }
-        
-        
-        // // <input>でファイルが選択されたときの処理
-        // const fileInput = document.getElementById('example'+[i]);
-        // const handleFileSelect = () => {
-        //     const files = fileInput.files;
-        //     // for (let i = 0; i < files.length; i++) {
-        //     // previewFile(files[i]);
-        //     // }
-        //     files.forEach(file => {
-        //         previewFile(file);
-        //     });
-        // }
-        // fileInput.addEventListener('change', handleFileSelect);    
-            
-        };
-        
+            // 画像ファイルの追加とプレビュー
+            '<div class="preview-img">' +
+            `<input type="file" id="example${i}" multiple>` +
+            `<div id="preview${i}"></div>` +
+            '</div>' + '</div>' + '</div>';
+
+            function previewFile(file) {
+                // プレビュー画像を追加する要素
+                const preview = document.getElementById(`preview${i}`);
+                // FileReaderオブジェクトを作成
+                const reader = new FileReader();
+                // ファイルが読み込まれたときに実行する
+                reader.onload = function (e) {
+                    const imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
+                    const img = document.createElement("img"); // img要素を作成
+                    img.src = imageUrl; // 画像のURLをimg要素にセット
+                    preview.appendChild(img); // #previewの中に追加
+                };
+
+                // いざファイルを読み込む
+                reader.readAsDataURL(file);
+            };
+
+            // <input>でファイルが選択されたときの処理
+            const fileInput = document.getElementById(`example${i}`);
+            const handleFileSelect = () => {
+                const files = fileInput.files;
+                for (let i = 0; i < files.length; i++) {
+                    previewFile(files[i])
+                }
+            }
+            fileInput.addEventListener('change', handleFileSelect);
 
     // for (var i = 0; i < 3; i++) {
 
@@ -368,7 +359,7 @@ function fetchIssues() {
                 // '<div class="preview-img">' +
                 // '<input type="file" id="example '+[i]+'" multiple>' +
                 // '<div id="preview '+[i]+'"></div>' +
-                // '</div>' + 
+                // '</div>' +
                 // '</div>';
     // };
 };
@@ -450,7 +441,5 @@ function changeDisplay(element) {
 // fileInput.addEventListener('change', handleFileSelect);
 
 
-/*
-Background Gradients From -- 
-https://uigradients.com
-*/
+// Background Gradients From
+// https://uigradients.com
