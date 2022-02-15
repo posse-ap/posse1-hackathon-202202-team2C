@@ -1177,7 +1177,40 @@ SP
 
 .well{
     width: 60%;
+    height: 20rem;
+    margin-bottom: 5rem;
+    color: rgb(var(--text-color));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-image: linear-gradient(-20deg, rgb(97, 97, 97) 0%, rgb(155, 197, 195) 100%);
+    border-width: 6px;
+    border-style: double;
+    border-color: transparent;
+    border-image: initial;
+    padding: 2rem;
+    border-radius: 25px;
+
 }
+
+.well h3{
+    font-size: 5rem;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 0, 0) -3px 2px 0px;
+}
+
+.rank-number{
+    font-size: 5rem;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 0, 0) -3px 2px 0px;
+}
+
+
 
 /* レスポンシブ */
 @media screen and (max-width: 768px) {
@@ -1189,6 +1222,7 @@ SP
     .well{
         width: 100%;
     }
+
 }
 
 @media screen and (max-width: 1279px){
