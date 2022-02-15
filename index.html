@@ -37,16 +37,23 @@
                     srcset="https://www.axalpha.com/blog/wp-content/themes/axalpha_blog/img/next/icon-tw.png 1x,https://www.axalpha.com/blog/wp-content/themes/axalpha_blog/img/next/icon-tw@2x.png 2x" width="38" height="38" alt="Twitter"></a> -->
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     <!-- LINEボタン -->
-                    <a href="https://social-plugins.line.me/lineit/share?url=https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/"><img class="line-share-button" src="./img/line-share-button.png" alt="LINE共有ボタン"></a>
-                    <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+                    <a
+                        href="https://social-plugins.line.me/lineit/share?url=https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/"><img
+                            class="line-share-button" src="./img/line-share-button.png" alt="LINE共有ボタン"></a>
+                    <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async"
+                        defer="defer"></script>
                 </ul>
             </div>
             <div class="service__tab__contaner">
                 <div class="service__tab" role="tablist">
-                    <button class="service__tab__button" role="tab" aria-controls="panel1" aria-selected="true" onclick="changeDisplay('movie')">Movies</button>
-                    <button class="service__tab__button" role="tab" aria-controls="panel2" aria-selected="false" onclick="changeDisplay('book')">Books</button>
-                    <button class="service__tab__button" role="tab" aria-controls="panel3" aria-selected="false" onclick="changeDisplay('music')">Music</button>
-                    <button class="service__tab__button" role="tab" aria-controls="panel4" aria-selected="false" onclick="changeDisplay('game')">Games</button>
+                    <button class="service__tab__button" role="tab" aria-controls="panel1" aria-selected="true"
+                        onclick="changeDisplay('movie')">Movies</button>
+                    <button class="service__tab__button" role="tab" aria-controls="panel2" aria-selected="false"
+                        onclick="changeDisplay('book')">Books</button>
+                    <button class="service__tab__button" role="tab" aria-controls="panel3" aria-selected="false"
+                        onclick="changeDisplay('music')">Music</button>
+                    <button class="service__tab__button" role="tab" aria-controls="panel4" aria-selected="false"
+                        onclick="changeDisplay('game')">Games</button>
                     <!-- <button class="service__tab__button" role="tab" aria-controls="panel5" aria-selected="false" onclick="changeDisplay('anime')">アニメ</button> -->
                 </div>
             </div>
@@ -54,10 +61,9 @@
     </header>
 
     <main>
-        <div class="service__panel">
+        <div class="service__panel" >
             <div id="panel1" role="tabpanel" class="service__panel__item">
                 <div class="col-lg-12">
-
                     <div id="issuesList0"></div>
                 </div>
             </div>
@@ -84,9 +90,9 @@
             </div>
         </div>
 
-            <button id="openModal" class="openModal">コンテンツ追加</button>
+        <button id="openModal" class="openModal">コンテンツ追加</button>
 
-            <!-- モーダルエリアここから -->
+        <!-- モーダルエリアここから -->
         <section id="modalArea" class="modalArea">
             <div id="modalBg" class="modalBg"></div>
             <div class="modalWrapper">
@@ -107,12 +113,12 @@
                                         <!-- <option value="5">アニメ</option> -->
                                     </select>
                                 </div>
-        
+
                                 <div class="form-group">
                                     <label for="issueDescInput">タイトル</label>
                                     <input type="text" class="form-control" id="issueDescInput" placeholder="">
                                 </div>
-        
+
                                 <div class="form-group">
                                     <label for="issueSeverityInput">評価</label>
                                     <select id="issueSeverityInput" class="form-control">
@@ -129,30 +135,31 @@
                                         <option value="10">10</option>
                                     </select>
                                 </div>
-        
+
                                 <div class="form-group">
                                     <label for="issueAssignedToInput">コメント</label>
                                     <input type="text" class="form-control" id="issueAssignedToInput" placeholder="">
                                 </div>
-        
+
                                 <button type="submit" class="btn btn-primary" id="closeModal">Add</button>
-        
+
                             </form>
                         </div>
                     </div>
-        
+
                 </div>
             </div>
         </section>
         <!-- モーダルエリアここまで -->
-
-        <!-- 画像ファイルのアップロードとプレビュー -->
-        <!-- <input type="file" id="example" multiple> -->
     </main>
+
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="jquery.js"></script>
     <script src="chance.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
