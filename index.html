@@ -79,51 +79,69 @@
                     </div>
                 </section>
             </div>
-             <!-- 追加 -->
-             <div class="container">
-                <h1>新たなコンテンツを追加<small>by posse my collection</small></h1>
-                <div class="jumbotron">
-                    <h3>コンテンツ追加</h3>
-                    <form id="issueInputForm">
-                        <div class="form-group">
-                            <label for="issueSeverityInput1">ジャンル</label>
-                            <select id="issueSeverityInput1" class="form-control">
-                                <option value="0"></option>
-                                <option value="1">Moves</option>
-                                <option value="2">Books</option>
-                                <option value="3">Music</option>
-                                <option value="4">Games</option>
-                            </select>
+        </div>
+
+            <button id="openModal">コンテンツ追加</button>
+
+            <!-- モーダルエリアここから -->
+        <section id="modalArea" class="modalArea">
+            <div id="modalBg" class="modalBg"></div>
+            <div class="modalWrapper">
+                <div class="modalContents">
+                    <!-- 追加 -->
+                    <div class="container">
+                        <div class="jumbotron">
+                            <h3>コンテンツ追加</h3>
+                            <form id="issueInputForm">
+                                <div class="form-group">
+                                    <label for="issueSeverityInput1">ジャンル</label>
+                                    <select id="issueSeverityInput1" class="form-control">
+                                        <option value="0"></option>
+                                        <option value="1">Moves</option>
+                                        <option value="2">Books</option>
+                                        <option value="3">Music</option>
+                                        <option value="4">Games</option>
+                                        <!-- <option value="5">アニメ</option> -->
+                                    </select>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="issueDescInput">タイトル</label>
+                                    <input type="text" class="form-control" id="issueDescInput" placeholder="">
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="issueSeverityInput">評価</label>
+                                    <select id="issueSeverityInput" class="form-control">
+                                        <option value="0"></option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="issueAssignedToInput">コメント</label>
+                                    <input type="text" class="form-control" id="issueAssignedToInput" placeholder="">
+                                </div>
+        
+                                <button type="submit" class="btn btn-primary" id="closeModal">Add</button>
+        
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label for="issueDescInput">タイトル</label>
-                            <input type="text" class="form-control" id="issueDescInput" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="issueSeverityInput">評価</label>
-                            <select id="issueSeverityInput" class="form-control">
-                                <option value="0"></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="issueAssignedToInput">コメント</label>
-                            <input type="text" class="form-control" id="issueAssignedToInput" placeholder="">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Add</button>
-                    </form>
+                    </div>
+        
                 </div>
             </div>
-        </div>
+        </section>
+        <!-- モーダルエリアここまで -->
 
         <!-- 画像ファイルのアップロードとプレビュー -->
         <!-- <input type="file" id="example" multiple> -->

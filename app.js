@@ -1,3 +1,84 @@
+window.addEventListener('DOMContentLoaded', () => { document.getElementById('issueInputForm').addEventListener('submit', saveIssue); });
+
+
+
+//イシュー登録機能
+function saveIssue(e) {
+    var issueDesc = document.getElementById('issueDescInput').value;//イシュー内容
+    var issueSeverity = document.getElementById('issueSeverityInput').value;//イシューの緊急度
+    var issueSeverity1 = document.getElementById('issueSeverityInput1').value;//イシューの緊急度
+    var issueAssignedTo = document.getElementById('issueAssignedToInput').value;//イシューの担当者
+    // var issueAssignedTo1 = document.getElementById('issueAssignedToInput1').value;//イシューの担当者
+    var issueId = chance.guid();//イシューid
+    var issueStatus = 'Open';//イシューの初期状態
+
+    console.log(issueSeverity1);
+
+    var issue = {
+        id: issueId,
+        description: issueDesc,
+        severity: issueSeverity,
+        severity1: issueSeverity1,
+        assignedTo: issueAssignedTo,
+        // assignedTo1: issueAssignedTo1,
+        status: issueStatus
+    }
+    //localStorageとは、Webブラウザにデータを保存する領域のことです。ブラウザを閉じても保存されたままであることが特徴になります。このlocalStorageを使って、データを保存したり取得したりすることができます。
+    if (localStorage.getItem('issues') == null) {
+        //ローカルストレージに何もデータがない時、issuesを配列化してそこへフォームのイシュー内容を追加する
+        var issues = [];
+        issues.push(issue);
+        localStorage.setItem('issues', JSON.stringify(issues));//サーバー通信する際に送信するデータは、JSON構造のデータに「シリアライズ化」という処理を施す
+    } else {
+        var issues = JSON.parse(localStorage.getItem('issues'));
+        issues.push(issue);
+        localStorage.setItem('issues', JSON.stringify(issues));
+    }
+    //フォームの内容をリセットする
+    document.getElementById('issueInputForm').reset();
+
+    //イシューの内容をサイト下部に表示させるための処理
+    fetchIssues();
+
+    //submitイベントの発生元であるフォームが持つデフォルトの動作をキャンセルするメソッドです。
+    e.preventDefault();
+
+    console.log(issues);
+}
+
+
+//クローズボタンを押した時の処理
+function setStatusClosed(id) {
+    var issues = JSON.parse(localStorage.getItem('issues'));
+
+    for (var i = 0; i < issues.length; i++) {
+        if (issues[i].id == id) {
+            issues[i].status = 'Closed';//状態をcloseに変更
+        }
+    }
+
+    localStorage.setItem('issues', JSON.stringify(issues));
+
+    fetchIssues();
+}
+
+
+//デリートボタンを押したときの処理
+function deleteIssue(id) {
+    var issues = JSON.parse(localStorage.getItem('issues'));
+
+    for (var i = 0; i < issues.length; i++) {
+        if (issues[i].id == id) {
+            issues.splice(i, 1);//イシューを配列から削除させる
+        }
+    }
+
+    localStorage.setItem('issues', JSON.stringify(issues));
+
+    fetchIssues();
+
+}
+
 //イシューをページ下部に表示
 function fetchIssues() {
     var issues = JSON.parse(localStorage.getItem('issues'));
@@ -137,40 +218,40 @@ function fetchIssues() {
         '<div class="well">' +
         '<p class="rank-number"> ' + [i + 1] + '' + desc3 + '</p>' +
         '<p><span class="glyphicon glyphicon-star"></span> ' + severity3 + '</p>' +
-        '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo3 + '</p>'+
+        '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo3 + '</p>';
 
         // 画像ファイルの追加とプレビュー
-        '<div class="preview-img">' +
-        `<input type="file" id="example${i}" multiple>` +
-        `<div id="preview${i}"></div>` +
-        '</div>' + '</div>' + '</div>';
+        // '<div class="preview-img">' +
+        // `<input type="file" id="example${i}" multiple>` +
+        // `<div id="preview${i}"></div>` +
+        // '</div>' + '</div>' + '</div>';
 
-        function previewFile(file) {
-            // プレビュー画像を追加する要素
-            const preview = document.getElementById(`preview${i}`);
-            // FileReaderオブジェクトを作成
-            const reader = new FileReader();
-            // ファイルが読み込まれたときに実行する
-            reader.onload = function (e) {
-                const imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
-                const img = document.createElement("img"); // img要素を作成
-                img.src = imageUrl; // 画像のURLをimg要素にセット
-                preview.appendChild(img); // #previewの中に追加
-            };
+        // function previewFile(file) {
+        //     // プレビュー画像を追加する要素
+        //     const preview = document.getElementById(`preview${i}`);
+        //     // FileReaderオブジェクトを作成
+        //     const reader = new FileReader();
+        //     // ファイルが読み込まれたときに実行する
+        //     reader.onload = function (e) {
+        //         const imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
+        //         const img = document.createElement("img"); // img要素を作成
+        //         img.src = imageUrl; // 画像のURLをimg要素にセット
+        //         preview.appendChild(img); // #previewの中に追加
+        //     };
 
-            // いざファイルを読み込む
-            reader.readAsDataURL(file);
-        };
+        //     // いざファイルを読み込む
+        //     reader.readAsDataURL(file);
+        // };
 
-        // <input>でファイルが選択されたときの処理
-        const fileInput = document.getElementById(`example${i}`);
-        const handleFileSelect = () => {
-            const files = fileInput.files;
-            for (let i = 0; i < files.length; i++) {
-                previewFile(files[i])
-            }
-        }
-            fileInput.addEventListener('change', handleFileSelect);
+        // // <input>でファイルが選択されたときの処理
+        // const fileInput = document.getElementById(`example${i}`);
+        // const handleFileSelect = () => {
+        //     const files = fileInput.files;
+        //     for (let i = 0; i < files.length; i++) {
+        //         previewFile(files[i])
+        //     }
+        // }
+        //     fileInput.addEventListener('change', handleFileSelect);
 
     // for (var i = 0; i < 3; i++) {
 
@@ -235,6 +316,15 @@ function changeDisplay(element) {
             break;
     }
 }
+
+$(function () {
+    $('#openModal').click(function () {
+        $('#modalArea').fadeIn();
+    });
+    $('#closeModal , #modalBg').click(function () {
+        $('#modalArea').fadeOut();
+    });
+});
 
 // ここから画像のアップロード
 // function previewFile(file) {
