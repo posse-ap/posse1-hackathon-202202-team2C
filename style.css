@@ -421,6 +421,23 @@ main {
     display: none;
 }
 
+.twitter__share__button__mobile,
+.line__share__button__mobile{
+    display: none;
+    width: 60px;
+}
+
+.modal__sns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.snsMobile{
+    padding-top: 7rem;
+    display: flex;
+    gap: 10%;
+}
+
 /* レスポンシブ */
 @media screen and (max-width: 768px) {
     .ranking-container {
@@ -487,14 +504,20 @@ main {
 
     .twitter-share-button,
     .line-share-button {
-        width: 40px;
-        height: auto;
+        /* width: 40px;
+        height: auto; */
+        display: none;
     }
-
+    
+    .twitter__share__button__mobile,
+    .line__share__button__mobile{
+        display: block;
+    }
+    
     .service__tab__mobile{
         display: block;
     }
-
+    
     .service__tab__contaner{
         display: none;
     }
@@ -559,6 +582,7 @@ main {
     background-color: #333;
     padding: 3rem;
     margin-bottom: 11rem;
+    width: 160px;
 }
 
 /* .modalContaner{
