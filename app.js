@@ -200,7 +200,7 @@ function fetchIssues() {
 
         issuesList2.innerHTML += '<div class="ranking-container">' +
         '<div class="well">' +
-        '<p class="rank-number"> ' + [i + 1] + '' + desc2 + '</p>' +
+        '<p class="rank-number"> ' + [i + 1] + '　　' + desc2 + '</p>' +
         '<p><span class="glyphicon glyphicon-star"></span> ' + severity2 + '</p>' +
         '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo2 + '</p>';
     };
@@ -216,7 +216,7 @@ function fetchIssues() {
 
         issuesList3.innerHTML += '<div class="ranking-container">' +
         '<div class="well">' +
-        '<p class="rank-number"> ' + [i + 1] + '' + desc3 + '</p>' +
+        '<p class="rank-number"> ' + [i + 1] + '　　' + desc3 + '</p>' +
         '<p><span class="glyphicon glyphicon-star"></span> ' + severity3 + '</p>' +
         '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo3 + '</p>';
 
