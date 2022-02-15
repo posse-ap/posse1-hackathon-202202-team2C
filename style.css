@@ -50,7 +50,7 @@ li {
     width: 100%;
     height: 96px;
     z-index: 100;
-    box-shadow: 3px 3px 3px rgb(204 204 204);
+    box-shadow: 3px 3px 10px white;
     justify-content: center;
     padding: 0 10px;
 }
@@ -91,6 +91,7 @@ li {
     color: #2eb1e6;
     transform: translate(-50%, -50%);
     border-bottom: solid 3px #2eb1e6;
+    text-shadow: 3px 3px 10px white;
     /* font-size: 4rem; */
     /* margin-bottom: 100px; */
     /* text-align: center; */
@@ -258,24 +259,51 @@ li {
 }
 
 /* タブ切替 */
+.service__tab__contaner{
+    /* background: rgba(255,255,255,0.5); */
+}
+
+.service__tab{
+    justify-content: space-between;
+    transition: .5s;
+    width: 100%;
+    z-index: 100;
+}
+
+.service__tab.transform{
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+}
+
 .service__tab {
     display: flex;
     gap: 24px;
 }
 
 .service__tab__button {
-    background: #2eb2e6a9;
-    color: rgb(255, 255, 255);
-    border-radius: 10px 10px 0 0;
+    background: #00000000;
+    color: #2fbdf5;
+    border-radius: 0 0 15px 15px;
+    border: solid 2px;
+    border-color: #2fbdf5;
     width: 33.3333%;
     text-align: center;
     padding: 20px 8px;
     cursor: pointer;
+    font-weight: bold;
+    opacity: 0.8;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+    box-shadow: 3px 3px 5px white;
+    text-shadow: 2px 2px 5px white;
 }
 
 .service__tab__button[aria-selected=true] {
     background: #2fbdf5;
+    color: white;
+    border-color:  white;
     font-weight: bold;
+    text-shadow: 3px 3px 5px #2fbdf5;
 }
 
 .service__panel {
