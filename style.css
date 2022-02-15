@@ -135,7 +135,6 @@ li {
     padding: 20px 8px;
     cursor: pointer;
     font-weight: bold;
-    opacity: 0.8;
     font-family: 'Permanent Marker', cursive;
     font-size: 20px;
     box-shadow: 3px 3px 5px white;
@@ -393,6 +392,7 @@ main {
     border-image: initial;
     padding: 2rem;
     border-radius: 25px;
+    box-shadow: 3px 3px 5px white;
 
 }
 
@@ -412,6 +412,10 @@ main {
     letter-spacing: 0.1em;
     color: rgb(255, 255, 255);
     text-shadow: rgb(0, 0, 0) -3px 2px 0px;
+}
+
+.service__tab__mobile{
+    display: none;
 }
 
 /* レスポンシブ */
@@ -483,6 +487,14 @@ main {
         width: 40px;
         height: auto;
     }
+
+    .service__tab__mobile{
+        display: block;
+    }
+
+    .service__tab__contaner{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 415px) {
@@ -542,28 +554,32 @@ main {
     color: #fff;
     border: 1px solid #fff;
     background-color: #333;
-    padding: 2rem;
-    margin-bottom: 8rem;
+    padding: 3rem;
+    margin-bottom: 11rem;
 }
 
+/* .modalContaner{
+    margin: 0 auto;
+    width: 35%;
+} */
 
-#footer .inner {
-    flex-wrap: wrap;
+/* プロフィール画像 */
+.profile__contaner{
+    padding: 5rem;
 }
 
-#footer a {
-    font-size: 0.75rem;
+.profile__contaner img{
+    width: 100%;
 }
 
-#footer .inner .title {
-    font-size: 0.9375rem;
+footer{
+    background-color: rgba(15, 15, 15, 0.89);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-#footer .inner>li {
-    width: 50%;
-}
-
-#footer .inner>li:nth-child(1),
-#footer .inner>li:nth-child(2) {
-    margin-bottom: 30px;
+.footer__posseslogo{
+    width: 8%;
+    margin: 0 auto;
 }

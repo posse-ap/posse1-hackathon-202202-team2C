@@ -44,24 +44,24 @@
                         defer="defer"></script>
                 </ul>
             </div>
-            <div class="service__tab__contaner">
-                <div class="service__tab" role="tablist">
-                    <button class="service__tab__button" role="tab" aria-controls="panel1" aria-selected="true"
-                        onclick="changeDisplay('movie')">Movies</button>
-                    <button class="service__tab__button" role="tab" aria-controls="panel2" aria-selected="false"
-                        onclick="changeDisplay('book')">Books</button>
-                    <button class="service__tab__button" role="tab" aria-controls="panel3" aria-selected="false"
-                        onclick="changeDisplay('music')">Music</button>
-                    <button class="service__tab__button" role="tab" aria-controls="panel4" aria-selected="false"
-                        onclick="changeDisplay('game')">Games</button>
-                    <!-- <button class="service__tab__button" role="tab" aria-controls="panel5" aria-selected="false" onclick="changeDisplay('anime')">アニメ</button> -->
-                </div>
-            </div>
+            
         </div>
     </header>
 
     <main>
-        <div class="service__panel" >
+        <div class="profile__contaner">
+            <img src="./img/background-image1.jpeg" alt="POSSEロゴ">
+        </div>
+        <div class="service__tab__contaner">
+            <div class="service__tab" role="tablist">
+                <button class="service__tab__button" role="tab" aria-controls="panel1" aria-selected="true" onclick="changeDisplay('movie')">Movies</button>
+                <button class="service__tab__button" role="tab" aria-controls="panel2" aria-selected="false" onclick="changeDisplay('book')">Books</button>
+                <button class="service__tab__button" role="tab" aria-controls="panel3" aria-selected="false" onclick="changeDisplay('music')">Music</button>
+                <button class="service__tab__button" role="tab" aria-controls="panel4" aria-selected="false" onclick="changeDisplay('game')">Games</button>
+                <!-- <button class="service__tab__button" role="tab" aria-controls="panel5" aria-selected="false" onclick="changeDisplay('anime')">アニメ</button> -->
+            </div>
+        </div>
+        <div class="service__panel">
             <div id="panel1" role="tabpanel" class="service__panel__item">
                 <div class="col-lg-12">
                     <div id="issuesList0"></div>
@@ -90,7 +90,9 @@
             </div>
         </div>
 
-        <button id="openModal" class="openModal">コンテンツ追加</button>
+        <div class="modalContaner">
+            <button id="openModal" class="openModal">コンテンツ追加</button>
+        </div>
 
         <!-- モーダルエリアここから -->
         <section id="modalArea" class="modalArea">
@@ -160,6 +162,23 @@
     <script src="jquery.js"></script>
     <script src="chance.js"></script>
     <script src="app.js"></script>
+
+    <footer>
+        <div class="service__tab__mobile">
+            <div class="service__tab" role="tablist">
+                <button class="service__tab__button" role="tab" aria-controls="panel1" aria-selected="true" onclick="changeDisplay('movie')">Movies</button>
+                <button class="service__tab__button" role="tab" aria-controls="panel2" aria-selected="false" onclick="changeDisplay('book')">Books</button>
+                <button class="service__tab__button" role="tab" aria-controls="panel3" aria-selected="false" onclick="changeDisplay('music')">Music</button>
+                <button class="service__tab__button" role="tab" aria-controls="panel4" aria-selected="false" onclick="changeDisplay('game')">Games</button>
+                <!-- <button class="service__tab__button" role="tab" aria-controls="panel5" aria-selected="false" onclick="changeDisplay('anime')">アニメ</button> -->
+            </div>
+        </div>
+        <div class="footer__posselogo__contaner">
+            <div class="footer__posseslogo">
+                <img src="./img/posseLogo.PNG" alt="POSSEロゴ">
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
