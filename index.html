@@ -31,23 +31,25 @@
                 <ul class="sns">
                     <!-- twitterボタン -->
                     <a href=""><img class="twitter-share-button" src="img/newtwitter.PNG" alt="twitterロゴ"></a>
-                    <!-- <i class="fa-brands fa-twitter-square twitter-share-button"></i> -->
-                    <!-- <a href="https://twitter.com/share?url=https%3A%2F%2Fwww.axalpha.com%2Fblog%2Fsns%25e3%2582%25b7%25e3%2582%25a7%25e3%2582%25a2%25e3%2583%259c%25e
-                    3%2582%25bf%25e3%2583%25b3%25e8%25a8%25ad%25e7%25bd%25ae%25e3%2581%2597%25e3%2581%259f%25e3%2582%2588%25ef%25bc%2581%2F&amp;text=SNS%E3%82%B7%E3%82%A7%E3%82%A2%E3%83%9C%E3%82%BF%E3%83%B3%E8%A8%AD%E7%BD%AE%E3%81%97%E3%81%9F%E3%82%88%EF%BC%81"
-                    onclick="window.open(this.href, 'TWwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="https://www.axalpha.com/blog/wp-content/themes/axalpha_blog/img/next/newtwitter.png"
-                    srcset="https://www.axalpha.com/blog/wp-content/themes/axalpha_blog/img/next/icon-tw.png 1x,https://www.axalpha.com/blog/wp-content/themes/axalpha_blog/img/next/icon-tw@2x.png 2x" width="38" height="38" alt="Twitter"></a> -->
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     <!-- LINEボタン -->
-                    <a href="https://social-plugins.line.me/lineit/share?url=https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/"><img class="line-share-button" src="./img/line-share-button.png" alt="LINE共有ボタン"></a>
-                    <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+                    <a
+                        href="https://social-plugins.line.me/lineit/share?url=https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/"><img
+                            class="line-share-button" src="./img/line-share-button.png" alt="LINE共有ボタン"></a>
+                    <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async"
+                        defer="defer"></script>
                 </ul>
             </div>
             <div class="service__tab__contaner">
                 <div class="service__tab" role="tablist">
-                    <button class="service__tab__button" role="tab" aria-controls="panel1" aria-selected="true" onclick="changeDisplay('movie')">Movies</button>
-                    <button class="service__tab__button" role="tab" aria-controls="panel2" aria-selected="false" onclick="changeDisplay('book')">Books</button>
-                    <button class="service__tab__button" role="tab" aria-controls="panel3" aria-selected="false" onclick="changeDisplay('music')">Music</button>
-                    <button class="service__tab__button" role="tab" aria-controls="panel4" aria-selected="false" onclick="changeDisplay('game')">Games</button>
+                    <button class="service__tab__button" role="tab" aria-controls="panel1" aria-selected="true"
+                        onclick="changeDisplay('movie')">Movies</button>
+                    <button class="service__tab__button" role="tab" aria-controls="panel2" aria-selected="false"
+                        onclick="changeDisplay('book')">Books</button>
+                    <button class="service__tab__button" role="tab" aria-controls="panel3" aria-selected="false"
+                        onclick="changeDisplay('music')">Music</button>
+                    <button class="service__tab__button" role="tab" aria-controls="panel4" aria-selected="false"
+                        onclick="changeDisplay('game')">Games</button>
                     <!-- <button class="service__tab__button" role="tab" aria-controls="panel5" aria-selected="false" onclick="changeDisplay('anime')">アニメ</button> -->
                 </div>
             </div>
@@ -55,7 +57,7 @@
     </header>
 
     <main>
-        
+
         <div class="service__panel">
             <div id="panel1" role="tabpanel" class="service__panel__item">
                 <div id="issuesList0">
@@ -90,187 +92,73 @@
                     </div>
                 </section>
             </div>
-             <!-- 追加 -->
-             <div class="container">
-                <h1>新たなコンテンツを追加 <small>by posse my collection</small></h1>
-                <div class="jumbotron">
-                    <h3>コンテンツ追加</h3>
-                    <form id="issueInputForm">
-                        <div class="form-group">
-                            <label for="issueSeverityInput1">ジャンル</label>
-                            <select id="issueSeverityInput1" class="form-control">
-                                <option value="0"></option>
-                                <option value="1">Moves</option>
-                                <option value="2">Books</option>
-                                <option value="3">Music</option>
-                                <option value="4">Games</option>
-                                <!-- <option value="5">アニメ</option> -->
-                            </select>
+        </div>
+
+        <button id="openModal">コンテンツ追加</button>
+
+        <!-- モーダルエリアここから -->
+        <section id="modalArea" class="modalArea">
+            <div id="modalBg" class="modalBg"></div>
+            <div class="modalWrapper">
+                <div class="modalContents">
+                    <!-- 追加 -->
+                    <div class="container">
+                        <div class="jumbotron">
+                            <h3>コンテンツ追加</h3>
+                            <form id="issueInputForm">
+                                <div class="form-group">
+                                    <label for="issueSeverityInput1">ジャンル</label>
+                                    <select id="issueSeverityInput1" class="form-control">
+                                        <option value="0"></option>
+                                        <option value="1">Moves</option>
+                                        <option value="2">Books</option>
+                                        <option value="3">Music</option>
+                                        <option value="4">Games</option>
+                                        <!-- <option value="5">アニメ</option> -->
+                                    </select>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="issueDescInput">タイトル</label>
+                                    <input type="text" class="form-control" id="issueDescInput" placeholder="">
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="issueSeverityInput">評価</label>
+                                    <select id="issueSeverityInput" class="form-control">
+                                        <option value="0"></option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="issueAssignedToInput">コメント</label>
+                                    <input type="text" class="form-control" id="issueAssignedToInput" placeholder="">
+                                </div>
+        
+                                <button type="submit" class="btn btn-primary" id="closeModal">Add</button>
+        
+                            </form>
                         </div>
-
-                        <div class="form-group">
-                            <label for="issueDescInput">タイトル</label>
-                            <input type="text" class="form-control" id="issueDescInput" placeholder="">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="issueSeverityInput">評価</label>
-                            <select id="issueSeverityInput" class="form-control">
-                                <option value="0"></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="issueAssignedToInput">コメント</label>
-                            <input type="text" class="form-control" id="issueAssignedToInput" placeholder="">
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Add</button>
-
-                    </form>
+                    </div>
+        
                 </div>
             </div>
-        </div>
+        </section>
+        <!-- モーダルエリアここまで -->
 
         <!-- 画像ファイルのアップロードとプレビュー -->
         <input type="file" id="example" multiple>
-
-
-            <!--
-            <section id="voice" class="wrapper">
-                <h2 class="section-title">posseの声</h2>
-                <div class="item-left inview-balloon">
-                    <div class="student">
-                        <img src="img/icon-student1.png" alt="">
-                        <p class="name">○○○さん<br>大学生</p>
-                    </div>
-                    <div class="balloon-text">
-                        <p>
-                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                        </p>
-                    </div>
-                </div>
-                <div class="item-right inview-balloon">
-                    <div class="balloon-text">
-                        <p>
-                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                        </p>
-                    </div>
-                    <div class="student">
-                        <img src="img/icon-student2.png" alt="">
-                        <p class="name">○○○さん<br>大学生</p>
-                    </div>
-                </div>
-                <div class="item-left inview-balloon">
-                    <div class="student">
-                        <img src="img/icon-student3.png" alt="">
-                        <p class="name">○○○さん<br>大学生</p>
-                    </div>
-                    <div class="balloon-text">
-                        <p>
-                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-                        </p>
-                    </div>
-                </div>
-            </section> -->
-
-            <!-- スクールの概要 -->
-            <!-- <section id="summary">
-                <div class="wrapper">
-                    <h2 class="section-title">スクールの概要</h2>
-                    <ul class="menu">
-                        <li>
-                            <h3 class="menu-title">
-                                <span class="ja">レッスン内容</span>
-                                <span class="en">LESSON</span>
-                            </h3>
-                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                        </li>
-                        <li>
-                            <h3 class="menu-title">
-                                <span class="ja">料金プラン</span>
-                                <span class="en">PRICE</span>
-                            </h3>
-                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                        </li>
-                        <li>
-                            <h3 class="menu-title">
-                                <span class="ja">講師のご紹介</span>
-                                <span class="en">TEACHER</span>
-                            </h3>
-                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                        </li>
-                        <li>
-                            <h3 class="menu-title">
-                                <span class="ja">ハッカソン</span>
-                                <span class="en">Q&A</span>
-                            </h3>
-                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                        </li>
-                    </ul>
-                </div>
-            </section> -->
-
-            <!-- 無料体験申し込み -->
-            <!-- <div id="entry" class="wrapper">
-                <p class="title">ハッカソン</p>
-                <p class="catchphrase">今なら初月のレッスンを特別価格で受講できる割引クーポンをプレゼント！</p>
-                <a class="btn" href="#">無料体験に申し込む</a>
-            </div> -->
     </main>
-
-    <!-- <footer id="footer">
-        <ul class="inner wrapper">
-            <li>
-                <p class="title">コース一覧</p>
-                <ul class="menu">
-                    <li><a href="#">スタンダードプラン</a></li>
-                    <li><a href="#">プレミアムプラン</a></li>
-                    <li><a href="#">短期集中プラン</a></li>
-                    <li><a href="#">日常英会話コース</a></li>
-                    <li><a href="#">ビジネス英会話コース</a></li>
-                </ul>
-            </li>
-            <li>
-                <p class="title">講師紹介</p>
-                <ul class="menu">
-                    <li><a href="#">講師について</a></li>
-                    <li><a href="#">講師一覧</a></li>
-                    <li><a href="#">講師を探す</a></li>
-                </ul>
-            </li>
-            <li>
-                <p class="title">会社情報</p>
-                <ul class="menu">
-                    <li><a href="#">会社概要</a></li>
-                    <li><a href="#">採用情報</a></li>
-                </ul>
-            </li>
-            <li>
-                <p class="title">BBBについて</p>
-                <ul class="menu">
-                    <li><a href="#">よくあるご質問</a></li>
-                    <li><a href="#">ご利用規約</a></li>
-                    <li><a href="#">プライバシーポリシー</a></li>
-                    <li><a href="#">お問い合わせ</a></li>
-                </ul>
-            </li>
-        </ul>
-        <p class="copyright">&copy; BBB English School</p>
-    </footer> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="jquery.js"></script>
