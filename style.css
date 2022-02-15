@@ -259,9 +259,6 @@ li {
 }
 
 /* タブ切替 */
-.service__tab__contaner{
-    /* background: rgba(255,255,255,0.5); */
-}
 
 .service__tab{
     justify-content: space-between;
@@ -308,7 +305,6 @@ li {
 
 .service__panel {
     background: rgb(15, 15, 15);
-    border: solid 1px #333;
     padding: 32px 32px 40px;
 }
 
@@ -323,10 +319,6 @@ li {
 .service__panel__item__title {
     font-size: 18px;
     font-weight: bold;
-}
-
-.container {
-    /* margin-top: 24px; */
 }
 
 /*-------------------------------------------
