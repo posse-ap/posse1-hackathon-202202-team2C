@@ -86,13 +86,13 @@ li {
     font-family: 'Permanent Marker', cursive;
 }
 
-.sns{
+.sns {
     display: flex;
     gap: 10%;
     margin-bottom: 0;
 }
 
-.twitter-share-button{
+.twitter-share-button {
     width: 60px;
     height: auto;
 }
@@ -107,15 +107,15 @@ li {
     margin-top: 30px;
 }
 
-.service__tab{
+.service__tab {
     justify-content: space-between;
     transition: .5s;
     width: 100%;
     z-index: 100;
 }
 
-.service__tab.transform{
-    background: rgba(255,255,255,0.9);
+.service__tab.transform {
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
 }
 
@@ -127,7 +127,7 @@ li {
 .service__tab__button {
     background: #00000000;
     color: #2fbdf5;
-    border-radius:  15px 15px 0px 0px;
+    border-radius: 15px 15px 0px 0px;
     border: solid 2px;
     border-color: #2fbdf5;
     width: 33.3333%;
@@ -145,7 +145,7 @@ li {
 .service__tab__button[aria-selected=true] {
     background: #2fbdf5;
     color: white;
-    border-color:  white;
+    border-color: white;
     font-weight: bold;
     text-shadow: 3px 3px 5px #2fbdf5;
 }
@@ -168,7 +168,7 @@ li {
     font-weight: bold;
 }
 
-.service__panel__item{
+.service__panel__item {
     margin-top: 8rem
 }
 
@@ -386,7 +386,7 @@ main {
     color: rgb(var(--text-color));
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    background-image: linear-gradient(-20deg, rgb(10, 10, 10) 0%, rgb(3, 24, 9) 100%);
+    background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%);
     border-width: 6px;
     border-style: double;
     border-color: transparent;
@@ -423,12 +423,18 @@ main {
 
     .well {
         width: 100%;
+        height: 13rem;
+
     }
 
     .twitter-share-button,
-    .line-share-button{
+    .line-share-button {
         width: 50px;
         height: auto;
+    }
+
+    .rank-number {
+        font-size: 2.5rem;
     }
 
 }
@@ -473,15 +479,16 @@ main {
     }
 
     .twitter-share-button,
-    .line-share-button{
+    .line-share-button {
         width: 40px;
         height: auto;
     }
 }
 
-@media screen and (max-width: 415px){
+@media screen and (max-width: 415px) {
+
     .twitter-share-button,
-    .line-share-button{
+    .line-share-button {
         width: 35px;
         height: auto;
     }
@@ -524,17 +531,39 @@ main {
     cursor: pointer;
 }
 
-.container{
+.container {
     max-width: 100%;
 }
 
-.openModal{
+.openModal {
     margin-left: 8%;
-    margin-top:5rem ;
+    margin-top: 5rem;
     border-radius: 50px;
     color: #fff;
     border: 1px solid #fff;
     background-color: #333;
     padding: 2rem;
     margin-bottom: 8rem;
+}
+
+
+#footer .inner {
+    flex-wrap: wrap;
+}
+
+#footer a {
+    font-size: 0.75rem;
+}
+
+#footer .inner .title {
+    font-size: 0.9375rem;
+}
+
+#footer .inner>li {
+    width: 50%;
+}
+
+#footer .inner>li:nth-child(1),
+#footer .inner>li:nth-child(2) {
+    margin-bottom: 30px;
 }
