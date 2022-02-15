@@ -190,31 +190,30 @@ function fetchIssues() {
     var games = [];
     games.push(game);
 
-    var anime = issues.filter(function (object) {
-        if (object.severity1 == 5) {
-            return true;
-        }
-    });
+    // var anime = issues.filter(function (object) {
+    //     if (object.severity1 == 5) {
+    //         return true;
+    //     }
+    // });
 
     console.log(movies);
     console.log(books);
     console.log(musics);
     console.log(games);
 
-    console.log(movies[0][1].description);
-    console.log(books[0][1].description)
-    console.log(musics[0][1].description)
-    console.log(games[0][1].description)
+    // console.log(movies[0][1].description);
+    // console.log(books[0][1].description)
+    // console.log(musics[0][1].description)
+    // console.log(games[0][1].description)
 
-};
-
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
     var issuesList0 = document.getElementById('issuesList0');
     var issuesList1 = document.getElementById('issuesList1');
     var issuesList2 = document.getElementById('issuesList2');
@@ -224,29 +223,10 @@ function fetchIssues() {
     issuesList1.innerHTML = '';
     issuesList2.innerHTML = '';
     issuesList3.innerHTML = '';
-
-
-    // 本
+    
+    // 映画
     for (var i = 0; i < 3; i++) {
-
-        var id1 = books[0][i].id;
-        var desc1 = books[0][i].description;
-        var severity1 = books[0][i].severity;
-        var assignedTo1 = books[0][i].assignedTo;
-        var status1 = books[0][i].status;
-
-
-        console.log(desc1);
-
-        issuesList1.innerHTML += '<div class="ranking-container">' +
-            '<div class="well">' +
-            '<p class="rank-number"> ' + [i + 1] + '　　' + desc1 + '</p>' +
-            '<p><span class="glyphicon glyphicon-star"></span> ' + severity1 + '</p>' +
-            '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo1 + '</p>';
-
-    };
-    for (var i = 0; i < 3; i++) {
-
+        
         var id0 = movies[0][i].id;
         var desc0 = movies[0][i].description;
         var severity0 = movies[0][i].severity;
@@ -254,117 +234,140 @@ function fetchIssues() {
         var assignedTo0 = movies[0][i].assignedTo;
         // var assignedTo1 = issues[i].assignedTo1;
         var status0 = movies[0][i].status;
-
-
+        
+        
         console.log(desc0);
-
+        
         issuesList0.innerHTML += '<div class="ranking-container">' +
-            '<div class="well">' +
-            '<p class="rank-number"> ' + [i + 1] + '　　' + desc0 + '</p>' +
-            '<p><span class="glyphicon glyphicon-star"></span> ' + severity0 + '</p>' +
-            '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo0 + '</p>';
-
+        '<div class="well">' +
+        '<p class="rank-number"> ' + [i + 1] + '　　' + desc0 + '</p>' +
+        '<p><span class="glyphicon glyphicon-star"></span> ' + severity0 + '</p>' +
+        '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo0 + '</p>';
+        
     };
-
+    
+    
+    // 本
     for (var i = 0; i < 3; i++) {
-
+        
+        var id1 = books[0][i].id;
+        var desc1 = books[0][i].description;
+        var severity1 = books[0][i].severity;
+        var assignedTo1 = books[0][i].assignedTo;
+        var status1 = books[0][i].status;
+        
+        
+        console.log(desc1);
+        
+        issuesList1.innerHTML += '<div class="ranking-container">' +
+        '<div class="well">' +
+        '<p class="rank-number"> ' + [i + 1] + '　　' + desc1 + '</p>' +
+        '<p><span class="glyphicon glyphicon-star"></span> ' + severity1 + '</p>' +
+        '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo1 + '</p>';
+        
+    };
+    
+    
+    for (var i = 0; i < 3; i++) {
+        
         var id2 = musics[0][i].id;
         var desc2 = musics[0][i].description;
         var severity2 = musics[0][i].severity;
         var assignedTo2 = musics[0][i].assignedTo;
         var status2 = musics[0][i].status;
-
-
+        
+        
         console.log(desc2);
-
+        
         issuesList2.innerHTML += '<div class="ranking-container">' +
-            '<div class="well">' +
-            '<p class="rank-number"> ' + [i + 1] + '　　' + desc2 + '</p>' +
-            '<p><span class="glyphicon glyphicon-star"></span> ' + severity2 + '</p>' +
-            '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo2 + '</p>';
-
-
+        '<div class="well">' +
+        '<p class="rank-number"> ' + [i + 1] + '　　' + desc2 + '</p>' +
+        '<p><span class="glyphicon glyphicon-star"></span> ' + severity2 + '</p>' +
+        '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo2 + '</p>';
+        
+        
     };
-
-
+    
+    
     for (var i = 0; i < 3; i++) {
-
+        
         var id3 = games[0][i].id;
         var desc3 = games[0][i].description;
         var severity3 = games[0][i].severity;
-
+        
         var assignedTo3 = games[0][i].assignedTo;
-
+        
         var status3 = games[0][i].status;
-
-
-
+        
+        
+        
         issuesList3.innerHTML += '<div class="ranking-container">' +
-            '<div class="well">' +
-            '<p class="rank-number"> ' + [i + 1] + '' + desc3 + '</p>' +
-            '<p><span class="glyphicon glyphicon-star"></span> ' + severity3 + '</p>' +
-            '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo3 + '</p>'+
-
-            // 画像ファイルの追加とプレビュー
-            '<div class="preview-img">' +
-            `<input type="file" id="example${i}" multiple>` +
-            `<div id="preview${i}"></div>` +
-            '</div>' + '</div>' + '</div>';
-
-            function previewFile(file) {
-                // プレビュー画像を追加する要素
-                const preview = document.getElementById(`preview${i}`);
-                // FileReaderオブジェクトを作成
-                const reader = new FileReader();
-                // ファイルが読み込まれたときに実行する
-                reader.onload = function (e) {
-                    const imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
-                    const img = document.createElement("img"); // img要素を作成
-                    img.src = imageUrl; // 画像のURLをimg要素にセット
-                    preview.appendChild(img); // #previewの中に追加
-                };
-
-                // いざファイルを読み込む
-                reader.readAsDataURL(file);
+        '<div class="well">' +
+        '<p class="rank-number"> ' + [i + 1] + '' + desc3 + '</p>' +
+        '<p><span class="glyphicon glyphicon-star"></span> ' + severity3 + '</p>' +
+        '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo3 + '</p>'+
+        
+        // 画像ファイルの追加とプレビュー
+        '<div class="preview-img">' +
+        `<input type="file" id="example${i}" multiple>` +
+        `<div id="preview${i}"></div>` +
+        '</div>' + '</div>' + '</div>';
+        
+        function previewFile(file) {
+            // プレビュー画像を追加する要素
+            const preview = document.getElementById(`preview${i}`);
+            // FileReaderオブジェクトを作成
+            const reader = new FileReader();
+            // ファイルが読み込まれたときに実行する
+            reader.onload = function (e) {
+                const imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
+                const img = document.createElement("img"); // img要素を作成
+                img.src = imageUrl; // 画像のURLをimg要素にセット
+                preview.appendChild(img); // #previewの中に追加
             };
-
-            // <input>でファイルが選択されたときの処理
-            const fileInput = document.getElementById(`example${i}`);
-            const handleFileSelect = () => {
-                const files = fileInput.files;
-                for (let i = 0; i < files.length; i++) {
-                    previewFile(files[i])
-                }
+            
+            // いざファイルを読み込む
+            reader.readAsDataURL(file);
+        };
+        
+        // <input>でファイルが選択されたときの処理
+        const fileInput = document.getElementById(`example${i}`);
+        const handleFileSelect = () => {
+            const files = fileInput.files;
+            for (let i = 0; i < files.length; i++) {
+                previewFile(files[i])
             }
+        }
             fileInput.addEventListener('change', handleFileSelect);
-
+            
     // for (var i = 0; i < 3; i++) {
 
-    //     var id4 = animes[0][i].id;
-    //     var desc4 = animes[0][i].description;
-    //     var severity4 = animes[0][i].severity;
+        //     var id4 = animes[0][i].id;
+        //     var desc4 = animes[0][i].description;
+        //     var severity4 = animes[0][i].severity;
     //     var assignedTo4 = animes[0][i].assignedTo;
     //     var status4 = animes[0][i].status;
-
-
+    
+    
     //     console.log(desc4);
-
+    
     //     issuesList4.innerHTML += '<div class="ranking-container">' +
     //         '<div class="well">' +
     //         '<p class="rank-number"> ' + [i + 1] + '</p>' +
     //         '<h3>' + desc4 + '</h3>' +
     //         '<p><span class="glyphicon glyphicon-star"></span> ' + severity4 + '</p>' +
     //         '<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo4 + '</p>'+
-                // // 画像ファイルの追加とプレビュー
-                // '<div class="preview-img">' +
-                // '<input type="file" id="example '+[i]+'" multiple>' +
-                // '<div id="preview '+[i]+'"></div>' +
-                // '</div>' +
-                // '</div>';
+    // // 画像ファイルの追加とプレビュー
+    // '<div class="preview-img">' +
+    // '<input type="file" id="example '+[i]+'" multiple>' +
+    // '<div id="preview '+[i]+'"></div>' +
+    // '</div>' +
+    // '</div>';
     // };
 };
 
 
+};
 
 
 
