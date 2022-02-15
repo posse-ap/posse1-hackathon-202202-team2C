@@ -45,7 +45,7 @@ li {
 }
 
 .all-header{
-    background-color: rgba(135, 207, 235, 0.459);
+    background-color: rgba(15, 15, 15, 0.89);
     position: fixed;
     width: 100%;
     height: 96px;
@@ -83,17 +83,20 @@ li {
     display: flex;
     font-weight: bold;
     font-size: 3.5rem;
+    /* font-size: 5rem; */
     flex-grow: 1;
     position: absolute;
     top:30%;
     left:50%;
+    color: #2eb1e6;
     transform: translate(-50%,-50%);
-    border-bottom: solid 3px #333;
+    border-bottom: solid 3px #2eb1e6;
     /* font-size: 4rem; */
     /* margin-bottom: 100px; */
     /* text-align: center; */
     /* position: relative; */
     /* padding-top: 2%; */
+    font-family: 'Permanent Marker', cursive;
 }
 
 .buttons{
@@ -257,8 +260,8 @@ li {
     gap: 24px;
 }
 .service__tab__button {
-  background: #9dd3a8;
-  color: #fff;
+  background: #2eb2e6a9;
+  color: rgb(255, 255, 255);
   border-radius: 10px 10px 0 0;
   width: 33.3333%;
   text-align: center;
@@ -266,11 +269,11 @@ li {
   cursor: pointer;
 }
 .service__tab__button[aria-selected=true] {
-  background: #3aa7a0;
+  background: #2fbdf5;
   font-weight: bold;
 }
 .service__panel {
-  background: #f4f0e6;
+  background: rgb(15, 15, 15);
   border: solid 1px #333;
   padding: 32px 32px 40px;
 }
@@ -293,6 +296,7 @@ Mainvisual
 -------------------------------------------*/
 main{
     padding-top: 140px;
+    background-color: rgb(15, 15, 15);
 }
 
 #mainvisual {
@@ -1160,6 +1164,10 @@ SP
     width: 400px;
     margin: 10px;
     border: solid 1px silver;
+}
+
+.preview-img{
+    color: #2eb1e6;
 }
 
 .ranking-container{
