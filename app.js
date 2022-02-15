@@ -458,3 +458,13 @@ function changeDisplay(element) {
 Background Gradients From -- 
 https://uigradients.com
 */
+
+
+$(function () {
+    $('#openModal').click(function () {
+        $('#modalArea').fadeIn();
+    });
+    $('#closeModal , #modalBg').click(function () {
+        $('#modalArea').fadeOut();
+    });
+});

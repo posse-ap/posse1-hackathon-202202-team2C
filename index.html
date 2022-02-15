@@ -36,8 +36,11 @@
                     </div>
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     <!-- LINEボタン -->
-                    <a href="https://social-plugins.line.me/lineit/share?url=https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/"><img class="line-share-button" src="./img/line-share-button.png" alt="LINE共有ボタン"></a>
-                    <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+                    <a
+                        href="https://social-plugins.line.me/lineit/share?url=https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/"><img
+                            class="line-share-button" src="./img/line-share-button.png" alt="LINE共有ボタン"></a>
+                    <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async"
+                        defer="defer"></script>
                 </div>
             </div>
         </div>
@@ -45,21 +48,23 @@
 
     <main>
         <div class="service__tab" role="tablist">
-            <button class="service__tab__button" role="tab" aria-controls="panel1" aria-selected="true" onclick="changeDisplay('movie')">映画</button>
-            <button class="service__tab__button" role="tab" aria-controls="panel2" aria-selected="false" onclick="changeDisplay('book')">本</button>
-            <button class="service__tab__button" role="tab" aria-controls="panel3" aria-selected="false" onclick="changeDisplay('music')">音楽</button>
-            <button class="service__tab__button" role="tab" aria-controls="panel4" aria-selected="false" onclick="changeDisplay('game')">ゲーム</button>
+            <button class="service__tab__button" role="tab" aria-controls="panel1" aria-selected="true"
+                onclick="changeDisplay('movie')">映画</button>
+            <button class="service__tab__button" role="tab" aria-controls="panel2" aria-selected="false"
+                onclick="changeDisplay('book')">本</button>
+            <button class="service__tab__button" role="tab" aria-controls="panel3" aria-selected="false"
+                onclick="changeDisplay('music')">音楽</button>
+            <button class="service__tab__button" role="tab" aria-controls="panel4" aria-selected="false"
+                onclick="changeDisplay('game')">ゲーム</button>
             <!-- <button class="service__tab__button" role="tab" aria-controls="panel5" aria-selected="false" onclick="changeDisplay('anime')">アニメ</button> -->
         </div>
         <div class="service__panel">
             <div id="panel1" role="tabpanel" class="service__panel__item">
                 <!-- ランキング -->
-                <section id="ranking" class="service__panel__item__title">
                     <div class="col-lg-12">
                         <div id="issuesList0">
                         </div>
                     </div>
-                </section>
             </div>
             <div id="panel2" role="tabpanel" class="service__panel__item" hidden>
                 <!-- ランキング -->
@@ -69,7 +74,7 @@
                         </div>
                     </div>
                 </section>
-                
+
             </div>
             <div id="panel3" role="tabpanel" class="service__panel__item" hidden>
                 <!-- ランキング -->
@@ -90,66 +95,79 @@
                     </div>
                 </section>
             </div>
-             <!-- 追加 -->
-             <div　class="container">
-                <h1>新たなコンテンツを追加 <small>by posse my　collection</small></h1>
-                <div class="jumbotron">
-                    <h3>コンテンツ追加</h3>
-                    <form id="issueInputForm">
-                        <div class="form-group">
-                            <label for="issueSeverityInput1">ジャンル</label>
-                            <select id="issueSeverityInput1" class="form-control">
-                                <option value="0"></option>
-                                <option value="1">映画</option>
-                                <option value="2">本</option>
-                                <option value="3">音楽</option>
-                                <option value="4">ゲーム</option>
-                                <!-- <option value="5">アニメ</option> -->
-                            </select>
+            <!-- 追加 -->
+            <!-- モーダルエリアここから -->
+            <section id="modalArea" class="modalArea">
+                <div id="modalBg" class="modalBg"></div>
+                <div class="modalWrapper">
+                    <div class="modalContents">
+                        <div　class="container">
+                            <div class="jumbotron">
+                                <h3>コンテンツ追加</h3>
+                                <form id="issueInputForm">
+                                    <div class="form-group">
+                                        <label for="issueSeverityInput1">ジャンル</label>
+                                        <select id="issueSeverityInput1" class="form-control">
+                                            <option value="0"></option>
+                                            <option value="1">映画</option>
+                                            <option value="2">本</option>
+                                            <option value="3">音楽</option>
+                                            <option value="4">ゲーム</option>
+                                            <!-- <option value="5">アニメ</option> -->
+                                        </select>
+                                    </div>
+            
+                                    <div class="form-group">
+                                        <label for="issueDescInput">タイトル</label>
+                                        <input type="text" class="form-control" id="issueDescInput" placeholder="">
+                                    </div>
+            
+                                    <div class="form-group">
+                                        <label for="issueSeverityInput">評価</label>
+                                        <select id="issueSeverityInput" class="form-control">
+                                            <option value="0"></option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    </div>
+            
+                                    <div class="form-group">
+                                        <label for="issueAssignedToInput">コメント</label>
+                                        <input type="text" class="form-control" id="issueAssignedToInput" placeholder="">
+                                    </div>
+            
+                                    <button type="submit" class="btn btn-primary">Add</button>
+            
+                                </form>
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="issueDescInput">タイトル</label>
-                            <input type="text" class="form-control" id="issueDescInput" placeholder="">
+                        <div id="closeModal" class="closeModal">
+                            ×
                         </div>
-
-                        <div class="form-group">
-                            <label for="issueSeverityInput">評価</label>
-                            <select id="issueSeverityInput" class="form-control">
-                                <option value="0"></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="issueAssignedToInput">コメント</label>
-                            <input type="text" class="form-control" id="issueAssignedToInput" placeholder="">
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Add</button>
-
-                    </form>
+                    </div>
                 </div>
-            </div> 
-                
-                
+            </section>
+
         </div>
-        </div>    
+        </div>
+
+
+        <button id="openModal">Open modal</button>
+
 
         <!-- 画像ファイルのアップロードとプレビュー -->
-        <input type="file" id="example" multiple>
+        <!-- <input type="file" id="example" multiple> -->
 
 
-            <!--
+        <!--
             <section id="voice" class="wrapper">
                 <h2 class="section-title">posseの声</h2>
                 <div class="item-left inview-balloon">
@@ -190,8 +208,8 @@
                 </div>
             </section> -->
 
-            <!-- スクールの概要 -->
-            <!-- <section id="summary">
+        <!-- スクールの概要 -->
+        <!-- <section id="summary">
                 <div class="wrapper">
                     <h2 class="section-title">スクールの概要</h2>
                     <ul class="menu">
@@ -227,8 +245,8 @@
                 </div>
             </section> -->
 
-            <!-- 無料体験申し込み -->
-            <!-- <div id="entry" class="wrapper">
+        <!-- 無料体験申し込み -->
+        <!-- <div id="entry" class="wrapper">
                 <p class="title">ハッカソン</p>
                 <p class="catchphrase">今なら初月のレッスンを特別価格で受講できる割引クーポンをプレゼント！</p>
                 <a class="btn" href="#">無料体験に申し込む</a>
