@@ -195,20 +195,16 @@ function fetchIssues() {
             return true;
         }
     });
-    var animes = [];
-    animes.push(anime);
 
     console.log(movies);
     console.log(books);
     console.log(musics);
     console.log(games);
-    console.log(animes);
 
     console.log(movies[0][1].description);
     console.log(books[0][1].description)
     console.log(musics[0][1].description)
     console.log(games[0][1].description)
-    console.log(animes[0][1].description)
 
 
 
