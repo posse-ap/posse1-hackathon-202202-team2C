@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 
 <body onload="fetchIssues()">
@@ -27,7 +28,7 @@
                 <div class="header-title">
                     <h2 class="section-title">My Collection</h2>
                 </div>
-                <div>
+                <div class="buttons">
                     <!-- twitterボタン -->
                     <div class="tweet-it-button">
                         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
@@ -35,11 +36,7 @@
                     </div>
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     <!-- LINEボタン -->
-                    <div class="line-it-button">
-                        <a class="line-share-button" data-lang="ja" data-type="share-a" data-env="REAL"
-                            data-url="https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/"
-                            data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;">Line</a>
-                    </div>
+                    <a href="https://social-plugins.line.me/lineit/share?url=https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/"><img class="line-share-button" src="./img/line-share-button.png" alt="LINE共有ボタン"></a>
                     <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
                 </div>
             </div>
