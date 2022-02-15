@@ -77,10 +77,10 @@ li {
     font-size: 3.5rem;
     flex-grow: 1;
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 50%;
     color: #2eb1e6;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -70%);
     border-bottom: solid 3px #2eb1e6;
     text-shadow: 3px 3px 10px white;
     font-family: 'Permanent Marker', cursive;
@@ -391,9 +391,8 @@ main {
     border-style: double;
     border-color: transparent;
     border-image: initial;
-    padding: 2rem;
+    padding-bottom: 2rem;
     border-radius: 25px;
-
 }
 
 .well h3 {
@@ -403,6 +402,11 @@ main {
     letter-spacing: 0.1em;
     color: rgb(255, 255, 255);
     text-shadow: rgb(0, 0, 0) -3px 2px 0px;
+}
+
+.well p:not(.rank-number){
+    height: 20px;
+    margin: 0;
 }
 
 .rank-number {
