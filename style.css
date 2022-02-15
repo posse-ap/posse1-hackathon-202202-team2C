@@ -104,8 +104,11 @@ li {
     gap: 10%;
 }
 
-.tweet-it-button {
-    height: 50%;
+.twitter-share-button{
+    width: 70px;
+    height: auto;
+    color: rgb(0,171,238);
+    z-index: 200;
 }
 
 .line-share-button {
