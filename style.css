@@ -103,17 +103,16 @@ li {
 .sns{
     display: flex;
     gap: 10%;
+    margin-bottom: 0;
 }
 
 .twitter-share-button{
-    width: 70px;
+    width: 60px;
     height: auto;
-    color: rgb(0,171,238);
-    z-index: 200;
 }
 
 .line-share-button {
-    width: 70px;
+    width: 60px;
     height: auto;
 }
 
@@ -1253,6 +1252,12 @@ SP
         width: 100%;
     }
 
+    .twitter-share-button,
+    .line-share-button{
+        width: 50px;
+        height: auto;
+    }
+
 }
 
 @media screen and (max-width: 1279px) {
@@ -1292,5 +1297,19 @@ SP
         justify-content: center;
         display: flex;
         font-weight: bold;
+    }
+
+    .twitter-share-button,
+    .line-share-button{
+        width: 40px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 415px){
+    .twitter-share-button,
+    .line-share-button{
+        width: 35px;
+        height: auto;
     }
 }
