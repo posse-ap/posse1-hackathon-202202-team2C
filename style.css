@@ -99,7 +99,7 @@ li {
     font-family: 'Permanent Marker', cursive;
 }
 
-.buttons {
+.sns{
     display: flex;
     gap: 10%;
 }
