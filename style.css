@@ -104,6 +104,10 @@ li {
 }
 
 /* タブ切替 */
+.service__tab__contaner {
+    margin-top: 30px;
+}
+
 .service__tab{
     justify-content: space-between;
     transition: .5s;
