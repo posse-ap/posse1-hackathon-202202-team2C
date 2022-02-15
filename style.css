@@ -61,6 +61,7 @@ li {
     /* font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体"; */
     height: 96px;
     /* justify-content: space-between; */
+    position: relative;
 }
 
 .posse-logo img {
@@ -78,30 +79,21 @@ li {
 }
 
 .section-title {
-    justify-content: center;
+    /* justify-content: center; */
     display: flex;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 3.5rem;
     flex-grow: 1;
+    position: absolute;
+    top:30%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-bottom: solid 3px #333;
     /* font-size: 4rem; */
     /* margin-bottom: 100px; */
     /* text-align: center; */
     /* position: relative; */
     /* padding-top: 2%; */
-}
-
-/* 疑似要素でタイトル下に下線を引く */
-.bottom {
-    content: "";
-    width: 200px;
-    height: 3px;
-    background-color: #333;
-    display: block;
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
 }
 
 .tweet-it-button{
@@ -906,14 +898,9 @@ SP
         padding: 0 16px;
     }
 
-    .section-title {
-        font-size: 1.75rem;
-        margin-bottom: 60px;
-    }
-
-    .section-title::after {
+    /* .section-title::after {
         width: 80px;
-    }
+    } */
 
     /*-------------------------------------------
   ヘッダー
@@ -1192,5 +1179,44 @@ SP
 
     .well{
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 1279px){
+    .section-title{
+        font-size: 3.2rem;
+        justify-content: center;
+        display: flex;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 959px){
+    .section-title{
+        font-size: 2.8rem;
+        justify-content: center;
+        display: flex;
+        font-weight: bold;
+    }
+    h1>img{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 599px){
+    .section-title{
+        font-size: 2.5rem;
+        justify-content: center;
+        display: flex;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 479px){
+    .section-title{
+        font-size: 2.2rem;
+        justify-content: center;
+        display: flex;
+        font-weight: bold;
     }
 }
