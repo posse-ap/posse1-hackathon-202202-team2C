@@ -427,10 +427,7 @@ main {
     width: 60px;
 }
 
-.modal__sns{
-    display: flex;
-    justify-content: space-between;
-}
+
 
 .snsMobile{
     padding-top: 7rem;
@@ -520,6 +517,11 @@ main {
     
     .service__tab__contaner{
         display: none;
+    }
+
+    .modal__sns{
+        display: flex;
+        justify-content: space-between;
     }
 }
 
