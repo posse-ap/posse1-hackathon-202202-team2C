@@ -594,11 +594,17 @@ main {
 
 /* プロフィール画像 */
 .profile__contaner{
-    padding: 5rem;
+   /* width: 50%;
+   margin: 0 auto;
+   display: flex ;
+   justify-content: center;
+    */
 }
 
 .profile__contaner img{
-    width: 100%;
+ /* width: 40%;
+ border-radius: 2rem;
+ margin: 5rem; */
 }
 
 footer{
